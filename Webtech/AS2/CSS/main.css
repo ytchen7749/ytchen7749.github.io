@@ -1,0 +1,103 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+#wrapper {
+    margin: 0 auto;
+    width: 100%;
+}
+
+#banner {
+    width: 100%;
+    background: linear-gradient(180deg, hsla(141, 78%, 88%, 1) 7%, hsla(190, 84%, 88%, 1) 89%);;
+    color: rgba(5, 4, 4, 0.439);
+    height: 150px;
+    clear: both;
+    position: fixed;
+}
+
+#banner h1{
+    margin: 40px 30px
+}
+
+#sidenav, #content, #supporting {
+    margin-top: 150px;
+}
+
+#about, #education, #experience, #interest {
+    padding-top: 200px;
+    margin-top: -200px;
+}
+
+.container {
+    padding: 10px 20px;
+}
+
+#sidenav {
+    width: 200px;
+    background-color: beige;
+    height: 300px;
+    position: fixed;
+}
+
+#content {
+    width: 900px;
+    background-color: rgb(253, 255, 220);
+    float: left;
+    margin-left: 200px;
+}
+
+#supporting {
+    width: 252px;
+    background-color: rgb(176, 216, 252);
+    height: 500px;
+    float: left;
+}
+
+#supporting .tag-cloud .tag{
+    padding: 2px 6px;
+    color:#453122;
+    display: inline-block;
+}
+
+#footer {
+    width: 100%;
+    background-color: #ced2d4;
+    color: #0a1928;
+    float: left;
+    clear: both;
+    z-index: 2;
+    padding: 6px;
+}
+
+#footer p {
+    display: flex;
+    justify-content: center; 
+}
+
+#sidenav ul {
+    padding-left: 0px;
+}
+
+#sidenav div ul li {
+    display: block;
+    background-color: #453122;
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.5);
+    border: 1px solid white;
+    border-radius: 8px;
+}
+
+#sidenav li:hover {
+    background-color: rgb(235, 93, 57);
+}
+
+#sidenav li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
