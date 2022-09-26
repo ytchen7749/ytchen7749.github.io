@@ -1,0 +1,102 @@
+header{
+    background-color: white;
+}
+
+header > ul > li > .active{
+    /*border-bottom: 2px solid #d27751 ;*/
+    background-color: #8EFCFF;
+}
+
+.main-content div h2{
+    font-size: 24px;
+}
+
+.main-content div h3{
+    font-size: 20px;
+}
+
+.probootstrap-main-nav {
+    margin: 0;
+    padding: 0;
+}
+
+#sidenav{
+    height: 100%;
+    position: fixed;
+    margin-top: 50px;
+    margin-left: 20px;
+    border-right: 0.5px solid #7d7d7de5;
+}
+
+#sidenav .sectionA1{
+    padding: 5px;
+    margin: 30px 0px 20px 0px;
+}
+
+.sectionA1 .pro-info{
+    margin: 5px 45px;
+}
+
+.sectionA1 .pro-info div{
+    margin: 15px 0px 15px 10px;
+}
+
+.sectionA1 img{
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+}
+
+.sectionA1 .tag-cloud{
+    margin: 35px 0px 20px 20px;
+}
+
+.sectionA1 .RI{
+    color: #445563;
+    margin: 2px;
+}
+
+#sidenav .sectionA2 li a {
+    color: #445563;
+    text-decoration: none;
+    margin: 2px;
+
+}
+
+#sidenav .quick-nav.sectionA2{
+    width: 85%;
+    margin: 0 auto;
+}
+#sidenav .quick-nav li{
+    list-style-type: square;
+}
+
+.main-content{
+    margin: 20px 0px 0px 230px;
+    padding: 10px 20px;
+}
+
+.main-content #about{
+    margin-top: 80px;
+}
+
+.main-content .sectionB1{
+    margin-top: 5px;
+    padding: 10px 70px;
+}
+
+.left-line div p {
+    border-left: thick solid #345EED;
+    border-width: 3px;
+    padding-left: 10px;
+    text-align: left;
+}
+/* #d27751 */
+
+#teaching .class{
+    margin-top: 20px;
+}
+
+.inline-a{
+    text-decoration: none;
+}
