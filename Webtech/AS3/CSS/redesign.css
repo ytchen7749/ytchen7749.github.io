@@ -1,3 +1,6 @@
+@media (min-width: 2000px) { 
+
+}
 header{
     background-color: white;
 }
@@ -33,9 +36,14 @@ header > ul > li > .active{
     margin: 30px 0px 20px 0px;
 }
 
-.sectionA1 .pro-info{
-    margin: 5px 45px;
+@media (min-width: 1200px) { 
+    .sectionA1 .pro-info{
+        margin: 5px auto;
+        width: 80%;
+    }
 }
+
+
 
 .sectionA1 .pro-info div{
     margin: 15px 0px 15px 10px;
@@ -64,7 +72,7 @@ header > ul > li > .active{
 }
 
 #sidenav .quick-nav.sectionA2{
-    width: 85%;
+    width: 95%;
     margin: 0 auto;
 }
 #sidenav .quick-nav li{
@@ -76,12 +84,11 @@ header > ul > li > .active{
     padding: 10px 20px;
 }
 
-.main-content #about{
+#wrapper{
     margin-top: 80px;
 }
 
 .main-content .sectionB1{
-    margin-top: 5px;
     padding: 10px 70px;
 }
 
