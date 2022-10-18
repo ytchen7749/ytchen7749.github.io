@@ -1,0 +1,107 @@
+@import "compass/css3";
+
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+$color: #59d;
+
+@function makewave($color) {
+  $val: 0px 0px $color;
+  @for $i from 1 through 100 {
+    $val: #{$val}, #{$i*40}px 0px #{$color};
+  }
+  @return $val;
+}
+
+@mixin wave($color) {
+  box-shadow: makewave($color);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:before, :after {
+  content: '';
+  display: block;
+  position: absolute;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  padding: 40px 0;
+  background: #595;
+}
+
+.river {
+  position: relative;
+  height: 150px;
+  background: #7e431f;
+}
+
+.river:before {
+  bottom: 100%;
+  width: 100%;
+  height: 10px;
+  background: #7e431f;
+}
+
+.river:after {
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background: #595;
+}
+
+.wave {
+  position: absolute;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  animation-name: wave;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.wave:nth-child(1) {
+  top: 0;
+  background: $color;
+  @include wave($color);
+  animation-duration: 20s;
+}
+
+.wave:nth-child(2) {
+  top: 30px;
+  background: lighten($color, 5%);
+  @include wave(lighten($color, 5%));
+  animation-duration: 18s;
+}
+
+.wave:nth-child(3) {
+  top: 60px;
+  background: lighten($color, 10%);
+  @include wave(lighten($color, 10%));
+  animation-duration: 16s;
+}
+
+.wave:nth-child(4) {
+  top: 90px;
+  background: lighten($color, 15%);
+  @include wave(lighten($color, 15%));
+  animation-duration: 14s;
+}
+
+@keyframes wave {
+  0% {
+    transform: translate3d(0,0,0);
+  }
+  100% {
+    transform: translate3d(-1000px,0,0);
+  }
+}

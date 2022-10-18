@@ -1,0 +1,141 @@
+.hide {
+    display: none;
+}
+.window{
+    height: 3400px;
+}
+
+.sticky{
+    position: sticky;
+    padding: 10px;
+    top: 0px
+}
+
+#difficulty{
+    margin: 20px;
+}
+
+#difficulty .col-2{
+    display: inline-block;
+}
+
+#difficulty .col-2 .bricks{
+    display: inline-flex;
+}
+
+.bgfixed img{
+    width: 1200px;
+    height: 300vh;
+}
+
+.bricks{
+    width: 70px;
+    height: 20px;
+    background-color: #CC3300;
+    border-radius: 2px;
+    box-shadow: none;
+}
+
+#section1{
+    width: 100%;
+    background-image: url(../assets/river2.png);
+    height: 800px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#section2{
+    width: 100%;
+    background-image: url(../assets/river1.png);
+    height: 800px;
+    background-color: #d4ced4;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#section4{
+    width: 100%;
+    background-image: url(../assets/river1.png);
+    height: 800px;
+    background-color: #f8f5f8;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#section3{
+    width: 100%;
+    background-image: url(../assets/river2.png);
+    height: 800px;
+    background-color: #fff8dc;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+
+#section1 .controlsize{
+    width: 70px;
+    height: 70px;
+    position: fixed;
+}
+
+#section1 .obstacles{
+    width: 100%;
+    height: 0;
+    padding-top: 100%;
+    overflow: hidden;
+    position: relative;
+    left: 700px;
+    top: 230px;
+    background-image: url(../assets/stone3.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index:2
+}
+
+#section1 .boat-pos{
+    height: 20vh;
+    width: 15vh;
+    position: relative;
+    
+}
+
+#section1 .trace .boat{
+        width:300px;
+        position: fixed;
+        z-index:2;
+        left:50%;
+        top:70%;  
+        animation: boat 3s  cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite;
+}
+
+#section3 .controlsize{
+    width: 70px;
+    height: 70px;
+    position: fixed;
+}
+
+#section3 .obstacles{
+    width: 100%;
+    height: 0;
+    padding-top: 100%;
+    overflow: hidden;
+    position: relative;
+    left: 355px;
+    top: 430px;
+    background-image: url(../assets/stone2.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index:2
+}

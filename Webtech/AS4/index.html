@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>開放水域之難</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="./CSS/boat.css">
+    <link rel="stylesheet" href="./CSS/import.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="./js/action.js"></script>
+</head>
+
+<body>
+    <div class="window ">
+        <div id="difficulty" class="col-8 sticky">
+            <div class="col-2 ch1">
+                <div class="bricks"></div>
+                <div class="bricks"></div>
+                <div class="bricks"></div>
+                <div class="bricks"></div>
+                <div class="bricks"></div>
+                <div class="bricks"></div>
+                <div class="bricks"></div>
+                <div class="bricks"></div>
+                <div>阻礙1:法規 - 誰都管等於沒人管</div>
+            </div>
+
+            <div class="col-2 ch2">
+                <div class="bricks"></div>
+                <div class="bricks"></div>
+                <div class="bricks"></div>
+                <div class="bricks"></div>
+                <div class="bricks"></div>
+                <div class="bricks"></div>
+                <div class="bricks"></div>
+                <div class="bricks"></div>
+                <div>阻礙2:地方勢力角力 - 不同的治理邏輯</div>
+            </div>
+
+            <div class="col-2 ch3">
+                <div class="bricks"></div>
+                <div class="bricks"></div>
+                <div class="bricks"></div>
+                <div class="bricks"></div>
+                <div class="bricks"></div>
+                <div class="bricks"></div>
+                <div class="bricks"></div>
+                <div class="bricks"></div>
+                <div>阻礙3:變動的狀態 - 風險評估困難</div>
+            </div>
+
+            <div class="col-2 ch4">
+                <div class="bricks"></div>
+                <div class="bricks"></div>
+                <div class="bricks"></div>
+                <div class="bricks"></div>
+                <div class="bricks"></div>
+                <div class="bricks"></div>
+                <div class="bricks"></div>
+                <div class="bricks"></div>
+                <div>阻礙4:矛盾和衝突 - 親水又怕水的人</div>
+            </div>
+        </div>
+
+        <div class="river-bg">
+            <section id="section1" class="spot">
+                <div class="controlsize">
+                    <div id="hideO" class="obstacles"></div>
+                </div>
+                <div class="trace ocean">
+                    <div class="boat">
+                        <img class="boat-pos" src="./assets/rowingboat.png">
+                    </div>
+                    <div class="wave-action"></div>
+                    <div class="wave-action"></div>
+                    <div class="wave-action"></div>
+                    <div class="wave-action"></div>
+                </div>
+            </section>
+
+            <section id="section2" class="spot">
+                <div class="obstacles"></div>
+            </section>
+
+            <section id="section3" class="spot">
+                <div class="controlsize">
+                    <div id="hide3" class="obstacles"></div>
+                </div>
+            </section>
+
+            <section id="section4" class="spot">
+                <div class="obstacles"></div>
+            </section>
+        </div>
+    </div>
+
+</body>
+
+</html>
