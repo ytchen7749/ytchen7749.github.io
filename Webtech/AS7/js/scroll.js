@@ -1,4 +1,5 @@
-(function() {
+$(document).ready(function () {
+  (function() {
     var namespace = '__twreporterEmbeddedData'
     var packageName = 'scrollable-image'
     if (typeof window != 'undefined') {
@@ -14,3 +15,4 @@
       window[namespace][packageName].push(data)
     }
   })()
+})
