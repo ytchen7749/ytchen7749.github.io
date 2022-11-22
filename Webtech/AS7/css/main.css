@@ -1,0 +1,72 @@
+.bgfixed{
+    height: 100vh;
+    width: 100%;
+    background-image: url("../img2.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.block{
+    height: 99%;
+    width: 60%;
+    margin: 20px;
+}
+
+.bg1{
+    background-color: rgba(250, 250, 250, 0.121);
+}
+
+.bg2{
+    background-color: rgba(250, 250, 250, 0.493);
+}
+
+.bg3{
+    background-color: rgba(250, 250, 250, 0.925);
+}
+
+.river1{
+    width: 100%;
+    background-image: url(../river2.png);
+    height: 800px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.river2{
+    width: 100%;
+    background-image: url(../river2.png);
+    height: 800px;
+    background-color: #fff8dc;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#video {
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    width: 100vw;
+    z-index: -1;
+}
+
+.box {
+    position: relative;
+    top: 20vh;
+    left: 6vw;
+    background-color: rgba(228, 243, 243, 0.771);
+    width: 30vw
+}
+
+.box2 {
+    position: relative;
+    top: 20vh;
+    left: 3vw;
+    background-color: rgba(228, 243, 243, 0.771);
+    width: 33vw
+}
