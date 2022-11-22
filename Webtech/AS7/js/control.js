@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var max_scroll = $(document).height() - $(window).height() - 1200;
+    var max_scroll = $(document).height() - $(window).height() - 2400;
     $(window).scroll(function (e) {
         //document.querySelector('#video').play();
         var video = $('#video').get(0),
