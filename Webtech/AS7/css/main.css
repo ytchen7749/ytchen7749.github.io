@@ -70,3 +70,7 @@
     background-color: rgba(228, 243, 243, 0.771);
     width: 33vw
 }
+
+.hide{
+    display: none;
+}
