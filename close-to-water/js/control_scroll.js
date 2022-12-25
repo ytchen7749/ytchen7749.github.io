@@ -22,7 +22,7 @@ $(function() {
     $(window).scroll(function() {
         var document_height = $(document).height() - $(window).height();
         var scroll_position = $(window).scrollTop();
-        console.log(scroll_position);
+        //console.log(scroll_position);
         
         // control progress bar show or hide
         if (scroll_position > area[2]) {
