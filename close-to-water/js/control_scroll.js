@@ -43,7 +43,15 @@ $(function() {
             $('.chapter-name').text('Ch4 地方居民的觀點')
         } 
 
+        //
+        if (scroll_position > $('#ch2-bg').offset.top  && scroll_position < area[5] ) {
+            $('#ch2-bg').css({position: 'fixed', right: '', top: '50px'})
+        } else {
+            $('#ch2-bg').css({position: '', right: '', top: ''})
+        }
+
         
+
     });
 
 

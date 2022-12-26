@@ -76,8 +76,8 @@ $(document).ready(function () {
             </div>
             `
         
-        if (cur_pos > $('#area2').offset().top && cur_pos < $('#area3').offset().top){
-
+        if (clear_cur_pos > $('#area2').offset().top && clear_cur_pos < $('#area3').offset().top){
+            console.log('remove hide')
             $('#ch1-supplement').removeClass('hide')
         
             var video = $('#ch1-video').get(0),
