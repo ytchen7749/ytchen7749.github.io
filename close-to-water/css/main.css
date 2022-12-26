@@ -67,7 +67,7 @@
 
 /* ch1 start */
 #area2 {
-    height: 1600vh;
+    height: 1200vh;
     display: flex;
 }
 
@@ -91,9 +91,10 @@
             }
 
         #ch1-supplement{
-            position: sticky;
+            position: fixed;
             height: 50vh;
-            top: 20vh;
+            top: 160px;
+            right: 100px;
             align-items: center;
             margin: auto;
             z-index: 40;
@@ -103,9 +104,14 @@
                 width: 50vw;
             }
 
+            #ch1-supplement .ch1-text{
+                padding: 10px
+            }
+
 /* ch2 start */
 #area4 {
-    height: 800vh
+    min-height: 300vh;
+    height: 400vh
 }
 
     #ch2-bg{
@@ -113,58 +119,81 @@
         background-size:cover;
         background-attachment: fixed;
         height: 120vh;
-        width: 100vw;
+        width: 110vw;
         position: sticky;
         position: -webkit-sticky;
-        top: 75px
+        top: 75px;
+        overflow-x: hidden;
+        z-index: 6;
+
     }
         .law-container{
             position: relative;
             display: flex;
-            top: 50px;
-            left: 200px;
+            width: 70vw;
+            margin: 5px auto;
         }
 
-        .law-pos1{
-            float: left;
-            width: 50%;
-            margin-left: 20%;
-            margin-top: 2%
+        .law-container.law-pos1{
+            left: 10vw;
         }
 
-            .law-pos1 img{
-                width: 50%;
-                height: 55%;
+        .law-container.law-pos2{
+            top: -30vh;
+        }
+
+            .rocksize1 img{
+                width: 16vw;  /*30vw 400px*/
+                height: 70vh; /*40vh 350px*/
             }
 
-        .law-pos2{
-            float: right;
-            width: 45%;
-            margin-top: 2%;
-            margin-left: 60%;
+            .rocksize1 .law-text{
+                width: 30vw;
+                padding: 5vh;
+                align-self: center;
+                position: relative;
+                top: -10vh
+            }
+        
+
+        .law-container.law-pos3{
+            left: -15vw;
+            top: -60vh
         }
 
-            .law-pos2 img{
-                width: 30%;
-                height: 35%;
-            }
-
-        .law-pos3{
-            float: left;
-            width: 45%;
-            margin-top: 2%;
-            margin-left: 40%;
+        .law-container.law-pos4{
+            left: 5vw;
+            top: -80vh
         }
 
-            .law-pos3 img{
-                width: 30%;
-                height: 35%;
+            .rocksize2 img{
+                width: 50vw;  /*30vw*/
+                height: 60vh; /*40vh*/
             }
 
-.law-text{
-    box-sizing: border-box;
-    padding: 15px;
-}
+            .rocksize2 .law-text{
+                width: 175vw;
+                padding: 5vh;
+                align-self: center;
+            }
+
+            .rocksize3 img{
+                width: 40vw;  /*30vw*/
+                height: 80vh; /*40vh*/
+            }
+
+        .law-container.law-pos5{
+            left: 0vw;
+            top: -120vh
+        }
+
+            .rocksize3 .law-text{
+                width: 175vw;
+                padding: 5vh;
+                align-self: center;
+                position: relative;
+                top: 10vh
+            }           
 /* ch2 end */
 
 /* ch4 start */
