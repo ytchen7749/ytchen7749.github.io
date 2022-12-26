@@ -67,7 +67,7 @@
 
 /* ch1 start */
 #area2 {
-    height: 500vh;
+    height: 1600vh;
     display: flex;
 }
 
@@ -78,20 +78,32 @@
 
         #ch1-video-control{
             position: sticky;
-            height:50vh;
+            height: 50vh;
             top: 200px;
             align-items: center;
         }
 
             #ch1-video{
                 min-width: 100%;
-                min-height: 50%;
+                min-height: 80%;
                 width: 50%;
                 z-index: 3;
             }
 
+        #ch1-supplement{
+            position: sticky;
+            height: 50vh;
+            top: 20vh;
+            align-items: center;
+            margin: auto;
+            z-index: 40;
+        }
+            #ch1-supplement img{
+                height: 45vh;
+                width: 50vw;
+            }
+
 /* ch2 start */
-/* Note */
 #area4 {
     height: 800vh
 }
@@ -184,6 +196,10 @@
 .slideshow img {
     width: 98%;
     height: 30vh;
+}
+
+#area8 .slides{
+    height: 75%;
 }
 
 /* footer */
