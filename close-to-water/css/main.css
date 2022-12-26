@@ -2,6 +2,7 @@
 #title{
     font-family: source-han-serif-tc, serif;
 }
+
 .hide{
     display: none;
 }
@@ -33,15 +34,25 @@
     background-image: url('../materials/0-2_trans.jpg');
     background-size:cover;
     background-attachment: fixed;
-    height:50vh;
+    height:100vh;
 }
 
 .trans-text{
-    width: 75%;
+    width: 85%;
     margin: 0 auto;
     padding: 10%;
+    font-size: 2rem;
+    vertical-align: middle;
 }
 
+#ch2-intro .trans-text{
+    position: relative;
+    left: 15%
+}
+
+.trans-text .pt5{
+    padding-top: 20px;
+}
 /* reading status aka progress bar start*/
 #fix-progress{
     background-color: white;

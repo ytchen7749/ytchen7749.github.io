@@ -44,7 +44,7 @@
 
 /* ch2 start */
 #area4 {
-    min-height: 100vh;
+    min-height: 1200px;
     height: 95vh
 }
 
@@ -52,10 +52,12 @@
         background-image: url('../materials/ch2_mod.gif');
         background-size: cover;
         background-attachment: fixed;
-        height: 53vh;
-        width: 90vw;
+        height: 100vh;
+        width: 105vw;
         overflow-x: hidden;
         z-index: 6;
+        top: 200px;
+        position: sticky;
 
     }
         .law-container{
@@ -66,40 +68,47 @@
         }
 
         .law-container.law-pos1{
+            position: relative;
             left: 10vw;
+            margin-top: 15vh;
         }
 
         .law-container.law-pos2{
-            top: -30vh;
+            margin-top: 10vh;
         }
 
             .rocksize1 img{
                 width: 16vw;  /*30vw 400px*/
-                height: 70vh; /*40vh 350px*/
+                height: 22vh; /*40vh 350px*/
+                z-index: 2
             }
 
             .rocksize1 .law-text{
-                width: 30vw;
+                width: 35vw;
                 padding: 5vh;
                 align-self: center;
                 position: relative;
-                top: -10vh
+                top: -3vh
             }
         
 
         .law-container.law-pos3{
-            left: -15vw;
-            top: -60vh
+            position: relative;
+            left: -13vw;
+            /*top: -60vh*/
         }
 
         .law-container.law-pos4{
-            left: 5vw;
-            top: -80vh
+            position: relative;
+            left: 10vw;
+            margin-top: -20vh;
+            /*top: -80vh*/
         }
 
             .rocksize2 img{
                 width: 50vw;  /*30vw*/
                 height: 60vh; /*40vh*/
+                z-index: 3;
             }
 
             .rocksize2 .law-text{
@@ -111,11 +120,14 @@
             .rocksize3 img{
                 width: 40vw;  /*30vw*/
                 height: 80vh; /*40vh*/
+                z-index: 4;
             }
 
         .law-container.law-pos5{
+            position: relative;
             left: 0vw;
-            top: -120vh
+            margin-top: -40vh;
+            /* top: -120vh*/
         }
 
             .rocksize3 .law-text{
@@ -126,6 +138,11 @@
                 top: 10vh
             }           
 /* ch2 end */
+
+#area6 iframe{
+    margin: 0 auto;
+    display: block;
+}
 
 /* ch4 start */
 

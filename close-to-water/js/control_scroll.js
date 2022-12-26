@@ -50,6 +50,8 @@ $(function() {
             $('#ch2-bg').css({position: '', right: '', top: ''})
         }
 
+
+
         
 
     });
