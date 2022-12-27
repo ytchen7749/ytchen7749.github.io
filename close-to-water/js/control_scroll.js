@@ -65,5 +65,15 @@ $(function () {
 
     });
 
+    //ch4 slides
+    $('#interviewer1').carousel({
+        interval: 1500,
+        pause: 'hover'
+    })
+
+    $('#interviewer2').carousel({
+        interval: 1500,
+        pause: 'hover'
+    })
 
 });
