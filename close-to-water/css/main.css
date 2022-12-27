@@ -16,7 +16,7 @@
     width: 100%;
     background-color: white;
     padding: 15%;
-    color: #4cbbe3;
+    color: #4cbbe3; /*#4cbbe3*/
     z-index: 2;
 }
 
@@ -27,7 +27,7 @@
 
 .chapter-title h1{
     background-color: white;
-    color: #4cbbe3
+    color: #1995c2
 }
 
 .trans{

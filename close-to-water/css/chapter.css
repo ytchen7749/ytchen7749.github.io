@@ -181,15 +181,19 @@
 
 /* footer */
 #area9{
-    background-color: rgb(230, 233, 248);
-    margin: 200px auto;
-    font-size: 1.75rem;
+    background-color: #ceeafc;
+    margin: auto;
+    font-size: 1.2rem;
 }
 
 .text-block{
     box-sizing: border-box;
-    width: 70%;
+    width: 80%;
     height: 40%;
     margin: auto;
-    padding: 10%
+    padding: 2%
+}
+
+.text-block .mt20{
+    margin: 20px
 }
