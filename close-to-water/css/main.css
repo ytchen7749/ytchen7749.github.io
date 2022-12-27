@@ -54,7 +54,7 @@
 .trans-text .pt5{
     padding-top: 20px;
 }
-/* reading status aka progress bar start*/
+
 #fix-progress{
     background-color: white;
     width:100%;
@@ -64,15 +64,40 @@
 }
 
 #fix-progress img{
-    width: 5vw;
-    height: 5vh;
+    width: 8%;
+    height: 10%;
 }
 
 .status-container{
     width: 100%;
     margin-top: 15px;
 }
-/* reading status aka progress bar end*/
+
+.progress-container {
+    width: 100%;
+    height: 75px;
+  }
+  
+  .progress-bar {
+    height: 75px;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhT9AXpUqUyMjILJ9qn9PDvXpdXE-iqbc-HMXHfU04s6rJ0fbT);
+    animation: animate 60s linear infinite;
+    width: 0%;
+  }
+
+  @keyframes animate {
+    0% {
+        background-position: left 2px top 40px;
+    }
+
+    40% {
+        background-position: left 80px top -50px;
+    }
+
+    80% {
+        background-position: left 400px top 50px;
+    }
+}
 
 /* Cover */
 #cover{

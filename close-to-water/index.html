@@ -12,6 +12,7 @@
     <!-- customize CSS -->
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/chapter.css">
+    <!--  <link rel="stylesheet" href="./css/import.css"> -->
 
     <title>我們與水的距離</title>
 
@@ -22,15 +23,25 @@
     <script src="./js/control_ch1_video.js"></script>
 
 </head>
+<script>
+    // progress bar function
+    window.onscroll = function() {myFunction()};
+    
+    function myFunction() {
+      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scrolled = (winScroll / height) * 100;
+      document.getElementById("myBar").style.width = scrolled + "%";
+    }
+    </script>
 
 <body>
 
     <div id="fix-progress" class="container-fluid text-center hide">
-        <!-- <div id="moved" style="background-color:rgba(98, 210, 230, 0.911)"></div> -->
-        <div class="flex status-container">
-            <image src="./materials/icon.png"></image>
-            <div class="status"></div>
-            <h3 class="chapter-name">Ch1 台灣的淡水水域發生什麼事？</h3>
+        <div class="status-container progress-container">
+            <div class="progress-bar" id="myBar">
+                <h3 class="chapter-name">Ch1 台灣的淡水水域發生什麼事？</h3>
+            </div>
         </div>
     </div>
 
@@ -39,6 +50,7 @@
             <h2 class="align-self-center">我們與水的距離</h2>
             <h3 class="align-self-center">台灣人想親近水有多難？</h3>
         </div>
+        
     </div>
     <div id="article-intro">
         <div class="pt15">
