@@ -23,24 +23,17 @@
     <script src="./js/control_ch1_video.js"></script>
 
 </head>
-<script>
-    // progress bar function
-    window.onscroll = function() {myFunction()};
-    
-    function myFunction() {
-      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      var scrolled = (winScroll / height) * 100;
-      document.getElementById("myBar").style.width = scrolled + "%";
-    }
-    </script>
-
 <body>
 
     <div id="fix-progress" class="container-fluid text-center hide">
-        <div class="status-container progress-container">
-            <div class="progress-bar" id="myBar">
+        <div class="status-container ">
+            <div class="flex">
+                <image src="./materials/0-3_boat.gif"></image><a href="#cover"></a></image>
                 <h3 class="chapter-name">Ch1 台灣的淡水水域發生什麼事？</h3>
+            </div>
+            
+            <div class="progress-container-v2">
+                <div class="progress-bar-v2" id="myBar"></div>
             </div>
         </div>
     </div>
