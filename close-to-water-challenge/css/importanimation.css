@@ -1,0 +1,132 @@
+
+.water-wrapper{
+	position: absolute;
+	left: 50%;
+	bottom: 0px;
+	height: 70px;
+	width: 40%;
+	display: block;
+	z-index: 6;
+	overflow: hidden;
+}
+
+.water-wrap{
+	position: absolute;
+	left: 0;
+	bottom: -10px;
+	height: 70px;
+	width: 231px;
+	display: block;
+	z-index: 6;
+	transform: translateX(0);  
+	animation: moveWater 1.6s linear infinite;
+}
+@keyframes moveWater {
+	0% { 
+		transform: translateX(0);  
+	}
+	100% { 
+		transform: translateX(-33.333333333333%);  
+	}
+}
+.water{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 70px;
+	width: 77px;
+	display: block;
+	z-index: 6;
+}
+.water.snd{
+	left: 77px;
+}
+.water.trd{
+	left: 154px;
+}
+.water span{
+	position: absolute;
+	left: -4px;
+	top: 12px;
+	height: 20px;
+	width: 20px;
+	display: block;
+	z-index: 6;
+	border-radius: 50%;
+	border: 2px solid #030308;
+	border-color: #030308 transparent transparent transparent;
+}
+.water span:nth-child(2){
+	left: 9px;
+	top: -1px;
+	border-color: transparent transparent #030308 transparent;
+}
+.water span:nth-child(3){
+	left: 22px;
+}
+.water span:nth-child(4){
+	left: 35px;
+	top: -1px;
+	border-color: transparent transparent #030308 transparent;
+}
+.water span:nth-child(5){
+	left: 48px;
+}
+.water span:nth-child(6){
+	left: 61px;
+	top: -1px;
+	border-color: transparent transparent #030308 transparent;
+}
+.water-wrapper.top{
+	width: 68px;
+	left: 69.5px;
+	bottom: 10px;
+	z-index: 7;
+}
+.water-wrapper.top .water-wrap{
+	width: 204px;
+}
+.water-wrapper.top .water{
+	height: 70px;
+	width: 68px;
+	background-color: transparent;
+}
+.water-wrapper.top .water.snd{
+	left: 68px;
+}
+.water-wrapper.top .water.trd{
+	left: 136px;
+}
+.water-wrapper.top .water span{
+	position: absolute;
+	left: -3px;
+	top: 12px;
+	height: 18px;
+	width: 18px;
+	display: block;
+	z-index: 6;
+	border-radius: 50%;
+	border: 2px solid #030308;
+	border-color: #030308 transparent transparent transparent;
+}
+.water-wrapper.top .water span:nth-child(2){
+	left: 8px;
+	top: 0;
+	border-color: transparent transparent #030308 transparent;
+}
+.water-wrapper.top .water span:nth-child(3){
+	left: 19px;
+}
+.water-wrapper.top .water span:nth-child(4){
+	left: 30px;
+	top: 0;
+	border-color: transparent transparent #030308 transparent;
+}
+.water-wrapper.top .water span:nth-child(5){
+	left: 41px;
+}
+.water-wrapper.top .water span:nth-child(6){
+	left: 53px;
+	top: 0;
+	border-color: transparent transparent #030308 transparent;
+}
