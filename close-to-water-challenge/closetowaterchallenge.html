@@ -21,6 +21,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+    <script src="./js/control_v1.js"></script>
 </head>
 
 <body>
@@ -97,19 +98,19 @@
         </section>
 
         <section id="S2" class="article-section">
-            <h2>我可以在這裡玩水嗎？</h2>
+            <h2>玩水的挑戰</h2>
             <article>
                 李元治與他的親水同好們，曾經因為各種運動活動，到過全台灣各地玩水。其中不乏熱衷戶外活動的鐵人三項玩家，以及水上活動教練們，都曾參與過許多台灣政府或團體舉辦的湖中競賽。
             </article>
             <article>
-                然而，這些玩家們也注意到，台灣依然有許多湖水或河水，除了在比賽期間開放，或者因某些特定廠商承包而能夠進入外，平時人民無法進入這些水域活動。或者就算能進去，也有嚴格的管制條件，像是只開放給水上運動訓練國手等條件。
+                然而，這些玩家們也注意到，台灣依然有許多湖水或河水，除了在比賽期間開放，或者特定廠商承包而能夠進入外，平時人民無法進入這些水域。就算能進去，也有嚴格的管制條件，像是只開放給水上運動訓練國手等。
             </article>
         </section>
         <section id="video1">
-            <div id="video1-control" class="container video-container">
-                <video id="ch2-video" src="./materials/s2-video.mp4"></video>
+            <div id="video1-control" class="">
+                <video id="video1" src=""></video>
             </div>
-            <div id="ch2-supplement" class="hide">
+            <div id="v1-supplement" class="hide">
 
             </div>
         </section>
@@ -171,7 +172,7 @@
         </section>
 
         <section id="S3" class="article-section">
-            <h2>限制下水對了嗎？</h2>
+            <h2>限制的爭議</h2>
             <article>
                 李元治在龍潭大湖被開罰的案子，後來申請了憲法法庭的釋憲。雖然憲法法庭並沒有通過審理，但15位大法官中，有6位支持的大法官寫了意見書（112年憲裁字第13號），並對其中的爭議給出他們認為社會應該要重視的議題方向。
             </article>
@@ -200,7 +201,7 @@
                             <div class="image-wrapper">
                                 <img src="./materials/stone1-2.png" alt="Image 2">
                             </div>
-                            <div class="caption">然而，大法官的意見書指出，政府應重新思考管理方法，與人民使用公共水域的自由平衡。</div>
+                            <div class="caption">然而，<span class="highlight">大法官的意見書指出</span>，政府應重新思考管理方法，與人民使用公共水域的自由平衡。</div>
                         </div>
                     </div>
                 </div>
@@ -210,7 +211,7 @@
                             <div class="image-wrapper">
                                 <img src="./materials/stone2-1.png" alt="Image 1">
                             </div>
-                            <div class="caption2">中央鼓勵人民走入自然，但地方政府依舊擔心民眾出意外，會有相關責任與輿論壓力。</div>
+                            <div class="caption2">中央2019年的<span class="highlight">政策鼓勵人民走入自然</span>，但地方政府依舊擔心民眾出意外，會有相關責任與輿論壓力。</div>
                         </div>
                         <div class="back">
                             <div class="image-wrapper">
@@ -271,7 +272,7 @@
         </section>
 
         <section id="S4" class="article-section">
-            <h2>地方的水怎麼管？</h2>
+            <h2>地方的水</h2>
             <article>
                 李元治被開罰的地方，隸屬於宜蘭縣政府管轄範圍，而宜蘭縣也是許多縣市中，目前仍嚴格限制可下水的區域。然而，多水的蘭陽平原，其實孕育出許和水相關的活動與人才。像是在宜蘭長大的Monkey教練，從高中開始就是羅東高商的風帆選手，後來到澎湖科技大學就讀海洋遊憩系，近期也加入運動平台擔任教練，希望推廣立槳等新興的水上運動。
             </article>
@@ -285,15 +286,46 @@
                 然而，這條優美的河道，事實上因為行政管轄之故，分屬於不同行政機關，各區段目前被設定的使用目標也不相同。
             </article>
         </section>
-        <section id="video2">
+        <section id="S4-video" class="video-section">
             <div id="video2-control" class="video-container">
-                <video id="ch5-video" src="./materials/s4-video.mp4"></video>
+                <video id="video2" class="sticky" src="./materials/s4-video.mp4"></video>
             </div>
-            <div id="ch5-supplement" class="hide">
-
-            </div>
+            <div id="v2-supplement">
+                <div class="video-text text-right">
+                    <div class="v2-text text1 hide">這是蘭陽平原</div>
+                </div>
+                <div class="video-text text-right">
+                    <div class="v2-text text2 hide">其中一條重要的河流是冬山河。
+                        它的流量穩定，1980年代政府整治後，中下游河面寬敞。
+                        這裡也是近期爭取水域開放的重要河川。</div>
+                </div>
+                <div class="video-text text-right">
+                    <div class="v2-text text3 hide">生態綠洲旁，義成橋到鐵道橋間，
+                        管轄單位為宜蘭縣政府。開放縣府核可的小船及浮具業者，可帶客從事獨木舟活動。其餘民眾想下水需先申請。</div>
+                </div>
+                <div class="video-text text-right">
+                    <div class="v2-text text4 hide">冬山河舊河道（冬山段），
+                        管轄單位為冬山鄉公所。目前有業者經營電動小船，但一般民眾禁止下水。</div>
+                </div>
+                <div class="video-text text-right">
+                    <div class="v2-text text5 hide">著名的冬山河親水公園，
+                        民眾可在親水公園搭乘冬山河水上巴士，但無法下水。</div>
+                </div>
+                <div class="video-text text-right">
+                    <div class="v2-text text6 hide">冬山河舊河道（利澤段），
+                        2023年初縣政府剛委託地方單位做完景觀規劃，並釐清土地所有權，但目前管轄權尚未明確。</div>
+                </div>
+                <div class="video-text text-right">
+                    <div class="v2-text text7 hide">冬山河水上訓練基地。
+                        2021年完工，專為水上運動選手設立，平時不開放給船隻與民眾。一旁的水道也專屬訓練所用。</div>
+                </div>
+                <div class="video-text text-right">
+                    <div class="v2-text text8 hide">宜蘭傳統藝術中心。
+                        國立傳統藝術中心旁設有動力小船可搭乘，但一般民眾依舊不能自行下水。</div>
+                </div>
+            </div>          
         </section>
-        <section id="S4.5" class="article-section">
+        <section id="S4-3" class="article-section">
             <article>
                 Monkey教練認為，冬山河是非常優秀的划水基地，像是他自己身為運動選手，能曾經擁有這樣的訓練基地，絕對是此生非常難得的青春回憶。然而他同時也提到，運動選手長大後，其實還是希望能回到自己最喜歡的水上運動產業，但「家鄉宜蘭的水域產業少之又少，像是冬山河或者最近剛去的蘭陽溪，各河段都有合適的運動休閒活動可以配合。」Monkey教練說。
             </article>
@@ -307,21 +339,21 @@
         </section>
 
         <section id="S5" class="article-section2">
-            <h2>各方怎麼說？</h2>
+            <h2>各方說法</h2>
             <div class="perspective">
                 <div class="left">
                     <div class="figure">
                         <img class="figure-img" src="./materials/S5-opWu.png">
-                        <div class="figure-text">水上運動教練、救生員陳宏瑋</div>
+                        <div class="figure-text">水上運動教練、救生員吳宏瑋</div>
                     </div>
                 </div>
                 <div class="right">
                     <h3>要下水 更要認識水 才能與自然相處</h3>
                     <article>
-                        雪叮噹是救生教練，也是戶外運動愛好者，更是新型運動平台「寶島野孩子」的創辦人。他希望運動產業的年輕教練們都有自己的一席之地，因此創辦此平台。然而，身為水上運動教練及救生員的他也提醒，台灣的救生教育還不夠普及，在談論水域開放時，政府也更應該注重救生教育的提升，大家才更有本錢下水。
+                        吳宏瑋是救生教練，也是戶外運動愛好者，更是新型運動平台「寶島野孩子」的創辦人。他希望運動產業的年輕教練們都有自己的一席之地，因此創辦此平台。然而，身為水上運動教練及救生員的他也提醒，台灣的救生教育還不夠普及，在談論水域開放時，政府也更應該注重救生教育的提升，大家才更有本錢下水。
                     </article>
                     <article>
-                        雪叮噹說：「水域具有一定的風險性⋯⋯就像你走路也難免會摔倒，（學習水域相關能力）不可能短期，並且要知道風險在哪裡」
+                        吳宏瑋說：「水域具有一定的風險性⋯⋯就像你走路也難免會摔倒，（學習水域相關能力）不可能短期，並且要知道風險在哪裡」
                     </article>
                 </div>
             </div>
