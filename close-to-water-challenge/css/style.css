@@ -1,3 +1,4 @@
+
 /* global setting */
 body {
     /* background-color: #a6c2cedb; */
@@ -7,8 +8,14 @@ body {
     font-size: 20px;
 }
 
+/* body {
+    background-image:
+        linear-gradient(to bottom in oklch,
+            oklch(87% 0.43 230) 16% 42%, oklch(82% 0.42 257) 90% 90%);
+} */
+
 .hide {
-    display: none;
+    opacity: 0;
 }
 
 @font-face {
@@ -21,7 +28,7 @@ body {
 }
 
 main .article-section,
-footer .team {
+main .interact-section {
     width: 750px;
     padding-right: 15px;
     padding-left: 15px;
@@ -38,7 +45,7 @@ main .article-section article {
     height: 50%
 }
 
-.center {
+.center-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,7 +63,53 @@ main .article-section article {
 }
 
 .main-image-wrapper img {
-    margin: 80px;
+    margin: 80px 0px 20px 0px
+}
+
+main .article-section article.mt-80{
+    margin-top: 80px
+}
+
+/* loading */
+#loading-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #99e0ff;
+    ;
+    /* 背景色可以根據需求設定 */
+    z-index: 9999;
+    /* 確保 loading 動畫在最上層 */
+    margin: 0 auto;
+    align-items: center;
+    display: grid;
+}
+
+.loader {
+    margin: 0 0 2em;
+    height: 100px;
+    width: 20%;
+    text-align: center;
+    padding: 1em;
+    margin: 0 auto 1em;
+    display: block;
+}
+
+/* interact */
+
+#interact-map {
+    display: flex;
+}
+
+#interact-map #map {
+    flex: 5;
+    transform: scale(1)
+}
+
+#interact-map #map-supplement {
+    flex: 3;
 }
 
 /* Trans */
@@ -68,13 +121,20 @@ main .article-section article {
     overflow: hidden;
 }
 
-#T4.trans-section img,
 #T3.trans-section img {
     position: absolute;
     top: 50%;
     left: 0;
     width: 40%;
     height: 25%;
+    animation: move1 10s linear 1;
+}
+
+#T4.trans-section img{
+    position: absolute;
+    left: 0;
+    width: 20%;
+    height: 50%;
     animation: move1 10s linear 1;
 }
 
@@ -243,59 +303,171 @@ main .article-section article {
 
 
 /*video code*/
-/* #video1 {
-    position: sticky;
-    max-width: 100%;
-}
-    .video-container{
-        position: relative;
-        max-width: 750px;
-        margin-right: auto;
-        margin-left: auto;
-    }
-    .video-container video{
-        width: 100%;
-        height: 100vh;
-    }
-        #video1-control{
-            position: sticky;
-            align-items: center;
-        }
-
-#video2 {
-    height: 100vh;
-} */
 
 .video-section {
     position: relative;
-}
-
-.video-container {
-    position: relative;
-    height: 100vh;
+    margin: 0 auto;
     overflow: scroll;
-    z-index: 1;
+    height: 500vh;
 }
 
-.video-container #video2.sticky {
+.sticky{
+    position: sticky;
+    top: 50px
+}
+
+.fix{
     position: fixed;
-    top: 7%;
-    overflow: scroll;
-    left: 1%
+    top: 50px;
+    left: 5%;
+    right: 5%
 }
 
-.video-container #video2 {
-    position: relative;
-    top: 7%;
+.video-container{
+    width: 90%;
+    margin: 0 auto;
 }
 
-#v2-supplement {
-    position: relative;
-    height: 200vh;
-    margin-bottom: -70vh;
+.text-block{
+    height: 300vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.video-text{
+    z-index: 2;
+}
+
+.video-break{
+    height: 100vh;
+    z-index: 2;
+}
+
+.show-slowly{
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.video-text .hide{
+    opacity: 0;
 }
 
 .video-text .text1 {
+    position: absolute;
+    flex:4;
+    z-index: 2;
+    width: 20%;
+    padding: 10px 15px;
+    font-size: 30px;
+    right: 12%;
+    top: 7.4%;
+    background-color: rgba(232, 236, 236, 0.8);
+} 
+
+
+.video-text .text2 {
+    position: fixed;
+    flex:4;
+    z-index: 2;
+    background-color: rgba(232, 236, 236, 0.8);
+    width: 38%;
+    padding: 10px 15px;
+    font-size: 30px;
+    left: 8%;
+    top: 20%
+}
+
+.video-text .text3 {
+    position: sticky;
+    flex:4;
+    z-index: 2;
+    background-color: rgba(232, 236, 236, 0.8);
+    width: 36%;
+    padding: 10px 15px;
+    font-size: 30px;
+    left: 5%;
+    top: 40%
+}
+
+.video-text .text4 {
+    position: sticky;
+    flex:4;
+    z-index: 2;
+    background-color: rgba(232, 236, 236, 0.8);
+    width: 35%;
+    padding: 10px 15px;
+    font-size: 30px;
+    right: 10%;
+    top: 52%
+}
+
+.video-text .text5 {
+    position: sticky;
+    flex:4;
+    z-index: 2;
+    background-color: rgba(232, 236, 236, 0.8);
+    width: 35%;
+    padding: 10px 15px;
+    font-size: 30px;
+    left: 20%;
+    top: 30%
+}
+
+.video-text .text6 {
+    position: sticky;
+    flex:4;
+    z-index: 2;
+    background-color: rgba(232, 236, 236, 0.8);
+    width: 45%;
+    padding: 10px 15px;
+    font-size: 30px;
+    right: 5%;
+    top: 65%
+}
+
+.video-text .text7 {
+    position: fixed;
+    flex:4;
+    z-index: 2;
+    background-color: rgba(232, 236, 236, 0.8);
+    width: 35%;
+    padding: 10px 15px;
+    font-size: 30px;
+    right: 5%;
+    top: 35%
+}
+
+.video-text .text8 {
+    position: fixed;
+    flex:4;
+    z-index: 2;
+    background-color: rgba(232, 236, 236, 0.8);
+    width: 35%;
+    padding: 10px 15px;
+    font-size: 30px;
+    right: 10%;
+    top: 45%
+}
+
+.view{
+    z-index: 10;
+}
+
+.video-container #video2 {
+    width: 100%;
+
+}
+
+
+/* .video-container #video2.sticky {
+    position: fixed;
+    top: 7%;
+    overflow: scroll;
+} */
+
+
+
+/* .video-text .text1 {
     position: fixed;
     z-index: 2;
     width: 35%;
@@ -304,11 +476,11 @@ main .article-section article {
     font-weight: 100;
     right: 8%;
     top: 40%;
-    color:white
-}
+    background-color: rgba(232, 236, 236, 0.8);
+} */
 
 
-.video-text .text2 {
+/* .video-text .text2 {
     position: fixed;
     z-index: 2;
     background-color: rgba(232, 236, 236, 0.8);
@@ -383,7 +555,7 @@ main .article-section article {
     font-size: 30px;
     right: 10%;
     top: 45%
-}
+} */
 
 /* 動畫效果 */
 /* 初始位置在底部 
@@ -571,7 +743,7 @@ main .article-section article {
 }
 
 .perspective .left {
-    flex: 3;
+    flex: 2;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -670,8 +842,18 @@ main .article-section article {
 
 /* footer */
 footer {
+    background-color: #4682B4;
     margin-top: 150px;
-    padding: 1rem;
+    padding: 5% 10%;
+    color: white;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+footer .team{
+    width: 80%;
+    margin: 0 auto;
 }
 
 /* animation */
@@ -814,6 +996,16 @@ footer {
     overflow: hidden;
 }
 
+.judgebox img{
+    width: 100%;
+    height: 100%;
+}
+
+.swiper {
+    height: fit-content;
+    width: 100%;
+    scale: 0.65;
+}
 
 /* For screens larger than 768px */
 /* header, main, footer {
@@ -828,6 +1020,18 @@ section, article {
 @media (min-width: 768px) {
     body {
         max-width: 960px;
+        margin: auto;
+    }
+
+    section,
+    article {
+        margin-bottom: 3rem;
+    }
+}
+
+@media (max-width: 450px) {
+    body {
+        max-width: 30px;
         margin: auto;
     }
 
