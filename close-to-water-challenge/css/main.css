@@ -2,8 +2,9 @@
 body {
     background-color: #a4d9f0b4;
     font-family: Noto Sans TC;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
     font-size: 20px;
+    line-height: 1.8;
 }
 
 @font-face {
@@ -23,6 +24,10 @@ a {
     color: #2e2bdde2;
     font-weight: 300;
     text-decoration: none;
+}
+
+a:hover{
+    cursor: pointer;
 }
 
 /* loading */
@@ -225,7 +230,7 @@ main .trans-section.hor-grid {
 @media (min-width: 760px) {
     .article-section article,
     .open-section article{
-        width: 70%;
+        width: 65%;
         margin: 0 auto;
         margin-top: 30px;
         flex-shrink: inherit;
@@ -233,13 +238,27 @@ main .trans-section.hor-grid {
         justify-content: center;
     }
 
-    .article-section .block{
-        margin: 30px auto;
+    #S3.article-section .arg-point article{
+        margin: 0 auto;
     }
 
-    .article-section .block h3{
+    .article-section .arg-point{
+        margin: 40px auto;
+        width: 75%;
+        background-color: aliceblue;
+        opacity: 0.65;
+    }
+
+    .article-section .arg-point article{
+        padding: 20px 10px;
+        width: 80%;
+        /* background-color: aquamarine; */
+    }
+
+    .article-section .arg-point .title-s{
         width: 70%;
         margin: 0 auto;
+        justify-content: center;
     }
 }
 
@@ -431,7 +450,7 @@ main .trans-section.hor-grid {
     .trans-section .svg {
         position: absolute;
         height: auto;
-        animation: shipFloat 4.8s linear infinite;
+        animation: shipFloat 3.8s linear infinite;
     }
 
     #Title1 .trans-section .svg {
@@ -482,7 +501,7 @@ main .trans-section.hor-grid {
     }
 
     25% {
-        transform: translateY(0) rotate(2deg);
+        transform: translateY(0) rotate(3deg);
     }
 
     40% {
@@ -809,22 +828,28 @@ main .trans-section.hor-grid {
         flex-direction: column;
     }
 
-    .opinion .title-s {
+    .opinion .title-s,
+    .arg-point .title-s {
         display: flex;
         padding: 10px 15px;
         margin: 20px auto;
+        align-items: center;
+        justify-content: center;
     }
 
-    .opinion .title-s .icon {
+    .arg-point .title-s .icon {
+        height: 50px;
+        width: auto;
+    }
+
+    .opinion .title-s .icon{
         width: 70px;
         height: auto;
     }
 
-    .opinion .title-s h3 {
-        flex: auto;
-        margin-left: 10px;
-        display: flex;
-        align-items: center;
+    .opinion .title-s h3,
+    .arg-point .title-s h3 {
+        margin-left: 15px;
     }
 
     .perspective.opinion-left .left-col,
