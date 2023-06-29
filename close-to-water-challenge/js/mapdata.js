@@ -76,7 +76,7 @@ var simplemaps_countrymap_mapdata={
       name: "屏東縣"
     },
     TWN1160: {
-      name: "台南縣"
+      name: "台南市"
     },
     TWN1161: {
       name: "新竹市"

@@ -2,6 +2,12 @@ $(document).ready(function () {
 
     AOS.init();
 
+    var showAnsBtn = document.getElementById('showAns');
+    showAnsBtn.addEventListener('click', function(event) {
+        $('.ans').removeClass('hide')
+    });
+
+
     $(window).scroll(function (e) {
         //get video
         var video = $('#video2').get(0),
@@ -13,11 +19,11 @@ $(document).ready(function () {
             triggerpoint = $('#video-section').offset().top, //上緣
             D = $('#video2').height(), //video高度
             E = $(window).scrollTop() + $(window).height() > $('#video-section').offset().top, //目標出現在可視範圍
-            F = $('#T4').offset().top - $('#video2').offset().top + $(window).height(),
+            F = $('#S4').offset().top - $('#video2').offset().top + $(window).height(),
             ratio = (scrollPos - triggerpoint - D) / $('#video-section').height(); //滑動了多少
 
         video.currentTime = ratio * videoLength;
-        console.log(video.currentTime )
+        // console.log(video.currentTime)
 
         //video-box
         if (scrollPos + $(window).height() * 0.3 > triggerpoint && video.currentTime < 108.87) {
