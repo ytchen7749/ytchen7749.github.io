@@ -296,14 +296,17 @@ main .trans-section.hor-grid {
 }
 
 @media (min-width: 760px) {
-    .article-section .img-caption {
+    .article-section .img-caption,
+    .open-section .img-caption {
         max-width: 50%;
         margin: 2px auto;
-        flex-shrink: inherit;
-        flex-grow: auto;
         display: block;
-        align-items: center;
         font-size: 16px;
+        justify-content: center;
+    }
+
+    .open-section .img-caption {
+        max-width: 150px;
     }
 }
 
@@ -323,15 +326,17 @@ main .trans-section.hor-grid {
 /* opening */
 
 .flip-container {
-    margin: 40px auto;
+    display: flex;
+    margin: 40px auto 20px auto;
 }
 
 .flip-container .card {
+    flex: 1;
     position: relative;
 }
 
 .flip-container .card img {
-    width: 55%;
+    width: 95%;
     height: auto;
     flex-shrink: inherit;
     flex-grow: auto;
@@ -344,12 +349,15 @@ main .trans-section.hor-grid {
 .card .ans {
     background-color: #e6e9ecdc;
     opacity: 0.8;
-    width: 45%;
-    height: auto;
+    width: auto;
+    height: 10vh;
     position: absolute;
-    top: 25%;
-    left: 25%;
-    font-size: 24px
+    top: 30%;
+    left: 28%;
+    font-size: 24px;
+    padding: 20px 40px;
+    align-items: center;
+    margin: 0 auto;
 }
 
 .hide {
