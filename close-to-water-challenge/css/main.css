@@ -61,7 +61,7 @@ a:hover {
         font-family: 'Noto Sans TC';
         letter-spacing: 0.18rem;
         font-size: 20px;
-        line-height: 1.8;
+        line-height: 1.7;
     }
 
     h1 {
@@ -471,12 +471,16 @@ main .trans-section.hor-grid {
 }
 
 .am30{
-    margin: 10px auto !important;
-    padding: 15px 20px !important
+    margin: 5px auto !important;
+    padding: 10px 20px !important
 }
 
 .mt-30{
     margin-top: 30px !important;
+}
+
+.mb-30{
+    margin-bottom: 30px !important;
 }
 
 /* article-section article */
@@ -1045,6 +1049,7 @@ main .trans-section.hor-grid {
         width: 70%;
         height: auto;
         margin: 30px auto;
+        padding: 20px 30px;
         font-size: 18px;
         background-color: aliceblue;
         opacity: 0.8;
