@@ -2,9 +2,13 @@ $(document).ready(function () {
 
     AOS.init();
 
-    var showAnsBtn = document.getElementById('showAns');
+    var showAnsBtn = document.getElementById('showAns'),
+        showAnsBlock = document.querySelectorAll('.hide.ans'),
+        showAnsCaption = document.querySelectorAll('.hide.img-caption');
+    
     showAnsBtn.addEventListener('click', function(event) {
         $('.ans').removeClass('hide')
+        $('.img-caption').removeClass('hide')
     });
 
 
@@ -16,7 +20,7 @@ $(document).ready(function () {
         //note
         var scrollPos = $(window).scrollTop(), //滑到哪裡
             B = $(window).height(), //視窗高度
-            triggerpoint = $('#video-section').offset().top, //上緣
+            triggerpoint = $('#video-section').offset().top + 50, //上緣
             D = $('#video2').height(), //video高度
             E = $(window).scrollTop() + $(window).height() > $('#video-section').offset().top, //目標出現在可視範圍
             F = $('#S4').offset().top - $('#video2').offset().top + $(window).height(),
