@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="親水大挑戰">
+    <meta property="og:description" content="對於台灣的水，你的印象是什麼？
+    台灣是島國，更是河流眾多的土地，全國各地湖泊水域特別多。
+    然而，全台有多處水域，既使他們平時流速緩和，但政府還是不開放給民眾下水。
+    這背後有法規限制，還有地方發展問題。關心水的人，又如何行動呢？">
+    <meta property="og:image" content="./materials/preview.png">
+
+    <title>親水大挑戰</title>
+    <link rel="icon" href="./materials/icon.png">
+    <script type="text/javascript" src="./js/load.js"></script>
+    <link rel="stylesheet" href="./css/main.css">
+
+    <!-- import -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/mapdata.js"></script>
+    <script type="text/javascript" src="./js/taiwanmap.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <script type="modules" src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <script type="text/javascript" src="./js/main.js"></script>
+</head>
+
+<body>
+    <div id="loading-animation">
+        <div class="loader">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="48px" height="30px"
+                viewBox="0 0 24 30" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                <rect x="0" y="0" width="4" height="10" fill="#333">
+                    <animateTransform attributeType="xml" attributeName="transform" type="translate"
+                        values="0 0; 0 20; 0 0" begin="0" dur="0.8s" repeatCount="indefinite" />
+                </rect>
+                <rect x="10" y="0" width="4" height="10" fill="#333">
+                    <animateTransform attributeType="xml" attributeName="transform" type="translate"
+                        values="0 0; 0 20; 0 0" begin="0.2s" dur="0.8s" repeatCount="indefinite" />
+                </rect>
+                <rect x="20" y="0" width="4" height="10" fill="#333">
+                    <animateTransform attributeType="xml" attributeName="transform" type="translate"
+                        values="0 0; 0 20; 0 0" begin="0.4s" dur="0.8s" repeatCount="indefinite" />
+                </rect>
+            </svg>
+            <div>loading...</div>
+        </div>
+    </div>
+
+    <section id="cover">
+        <img class="cover-figure f1 " src="./materials/cover-people4.png">
+        <img class="cover-figure f2 " src="./materials/cover-people1.png">
+        <img class="cover-figure f3 m-hide" src="./materials/cover-people5.png">
+        <div id="title">
+            <h1 class="align-self-center">台灣人親水大挑戰</h1>
+            <h2 class="align-self-center">我們與身邊的水域離多遠？</h2>
+        </div>
+    </section>
+
+    <main>
+        <section class="open-section hor-grid">
+            <article class="am30">
+                夏天到了，天氣炎熱。朋友傳來訊息，想約你到河岸邊走走，另一位朋友提到，現在一些河岸可以下水，借好SUP或獨木舟，穿上救生衣，做好安全措施，應該可以親近河水。你覺得，以下兩條河，是你可以下水，但不會違法呢？
+            </article>
+            <div class="flip-container">
+                <div class="card figure">
+                    <img src="./materials/open-don.jpg" alt="冬山河照片">
+                    <div class="img-caption hide">廖芷瑩／攝影</div>
+                    <div class="ans hide">這裡是宜蘭冬山河<br>任意下水是違法的</div>
+                </div>
+                <div class="card figure">
+                    <img src="./materials/open-wei.jpg" alt="微風運河照片">
+                    <div class="img-caption hide">照片取自維基百科</div>
+                    <div class="ans hide">這裡是台北微風運河<br>開放民眾進行水上活動</div>
+                </div>
+            </div>
+            <button id="showAns">點我看答案</button>
+            <article class="am30">
+                你答對了嗎？
+            </article>
+            <article class="am30">
+                左邊是宜蘭的冬山河，目前無法隨意下水；右邊是淡水河的微風運河，除了提供選手和學生使用外，也開放給一般民眾玩風帆、風浪板、水橇板、獨木舟等水上運動。然而，他們都是平靜的淡水水域，為何不同區域的規範落差那麼多？台灣的親水政策與法規又發生了什麼事？
+            </article>
+
+        </section>
+
+        <section id="Title1" class="trans-section hor-grid">
+            <div class="title-w">
+                <h2>親水的抗爭</h2>
+            </div>
+            <img class="svg" src="./materials/trans-sup.png">
+        </section>
+
+        <section id="S1" class="article-section hor-grid">
+            <article class="am30">
+                2019年1月4日，資深的獨木舟教練李元治和朋友們，帶著自己的SUP（Stand Up Paddle，立槳）及獨木舟，來到龍潭湖邊集合。大夥人暖身後，不顧天氣的寒冷，紛紛跳下水，體驗湖泊的清澈。
+            </article>
+            <article class="am30">
+                然而，幾分鐘後，帶領的李元治就被警察以《發展觀光條例》第36條開罰，並處罰鍰新台幣壹萬元。雖然他們不是第一次下水被警告，但李元治與同好們時常無法理解，為何平靜也無害的水面，在政府大舉號稱鼓勵民眾走親近自然後，我們還是無法自由的親近身邊的淡水水域？
+            </article>
+            <div class="figure mt-30" data-aos="zoom-in">
+                <img src="./materials/s1-lee.png">
+                <div class="img-caption">李元治和夥伴去抗議時發言。照片提供／李元治</div>
+            </div>
+            <article class="am30">
+                從事水域活動20年的李元治因為無法理解這樣的社會情況，他帶過那麼多客人玩過台灣的河川、湖泊，想讓民眾更了解水的特性、台灣水岸風光與自然環境。他認為，與台灣人親近的溪河湖水，絕對會是我們生活的好友，而非危險的深淵。
+            </article>
+            <article class="am30">
+                在這幾年間，他與同好組成了「台灣開放水域聯盟」，並在全台灣尚未開放的水域中，觀察也爭取開放的機會，希望和他們一樣愛好水上活動的台灣人們，也可以都擁有近用自然的權利。
+            </article>
+            <div class="figure mt-30" data-aos="zoom-in">
+                <img src="./materials/s1-leeticket.png">
+                <div class="img-caption">宜蘭縣對李元治的行政處分書。照片提供／李元治</div>
+            </div>
+            <article class="am30">
+                台灣政府在2019推出「向山致敬」政策，後續也持續鼓勵民眾們走向山林，以及推動山林活動透明化、設施簡便、落實教育、登山自主管理等。此一走向，也預示著台灣的戶外活動進入下一個階段，國家政府不再希望全面掌控戶外資源，但相對的人民也該自負責任。
+            </article>
+            <article class="am30">
+                但是，李元治與他的夥伴們無法理解，當台灣戶外活動進入下一階段時，當我們要親近生活中的溪河湖，為何還是如此困難？
+            </article>
+            <div class="figure mt-30" data-aos="zoom-in">
+                <img src="./materials/s1-leesocialmovementv2.jpg">
+                <div class="img-caption">台灣開放水域聯盟到河邊呼籲開放的行動。攝影／廖芷瑩</div>
+            </div>
+        </section>
+
+        <section id="Title2" class="trans-section hor-grid">
+            <div class="title-w">
+                <h2>玩水的挑戰</h2>
+            </div>
+            <img class="svg" src="./materials/trans-sup.png">
+        </section>
+
+        <section id="S2" class="article-section hor-grid">
+            <article class="am30">
+                李元治與他的親水同好們，曾到過全台灣各地玩水。這些親水同好們，包括熱衷戶外活動的鐵人三項玩家，以及水上活動教練們，他們都曾參與過許多政府或團體舉辦的水上競賽。然而，他們也注意到，台灣依然有許多溪河湖，除了比賽期間外，平時人民根本無法進入，就算能進去，也有嚴格的管制條件，或只開放給水上運動訓練國手，以及特定外包廠商。
+            </article>
+            <article class="am30">
+                在李元治與台灣開放水域聯盟的過去幾年的了解下，他們發現的確有些地方是屬於危險的河段，但還有許多地方卻疑似在政府為了規避責任下，因此不開放水域，或者直接外包責任給廠商，而不是還水於民。
+            </article>
+            <article class="am30">
+                以下，讓我們跟著玩家們的腳步，看看他們曾經關注過，目前尚有開放爭議的台灣水域。以下地圖是玩家們認為水域適合下水，但依舊限制的淡水水域，希望中央與地方政府都能有更多討論。
+            </article>
+            <div id="interact-map">
+                <div id="map"></div>
+                <div id="map-supplement">有爭議的限制下水淡水水域</div>
+            </div>
+
+        </section>
+
+        <section id="Title3" class="trans-section hor-grid">
+            <div class="title-w">
+                <h2>限制的爭議</h2>
+            </div>
+            <img class="svg" src="./materials/trans-sup.png">
+        </section>
+
+        <section id="S3" class="article-section hor-grid">
+            <article class="am30">
+                李元治在龍潭大湖被開罰的案子，後來申請了憲法法庭的釋憲。雖然憲法法庭並沒有通過審理，但15位大法官中，有6位支持的大法官寫了意見書（112年憲裁字第13號），並對其中的爭議給出他們認為社會應該要重視的議題方向。
+            </article>
+            <article class="am30">
+                目前的水域管制，各地方政府，對許多水域，會因生態、安全等理由，以禁止和外包廠商為管理方式，為此釋憲案出上訴書的許家華律師提及，《發展觀光條例》理應是「發展觀光」，但如果依照目前地方政府的管理方式，一種是給特定廠商經營，但條件很嚴格，另一種是乾脆以危險之由，完全禁止，兩種其實都無助於《發展觀光條例》法條設置的原意，也就是促進地方觀光健全的發展。
+            </article>
+            <div class="arg-point">
+                <div class="title-s">
+                    <img class="icon" src="./materials/s3-icon.svg">
+                    <h3>爭議點一：下水自由應重新定義</h3>
+                </div>
+                <article class="am30">
+                    因《觀光發展條例》第36條第1項，及第60條第1項的規範，地方政府能以危險之由，規範人民下水的自由。
+                </article>
+                <article class="am30 mb-30">
+                    然而，除了民團指出地方政府目前限制區域，仍有許多可再討論的地點外，大法官的意見書也指出，政府應與人民使用公共水域的自由平衡，「隨著戶外休閒
+                    育樂之風氣及意識提高之後，政府管理措方色是否過度，也是值得討論之議題」。
+                </article>
+            </div>
+
+            <div class="arg-point">
+                <div class="title-s">
+                    <img class="icon" src="./materials/s3-icon.svg">
+                    <h3>爭議點二：中央與地方不同步</h3>
+                </div>
+                <article class="am30">
+                    中央2019年的「開放山林」政策，鼓勵人民走入自然，但地方政府依舊擔心民眾出意外，會有相關責任與輿論壓力。
+                </article>
+                <article class="am30 mb-30">
+                    但是，大法官對此指出，台灣在開放山林政策後已修正《國家賠償法》第3條第3項，且「政府的責任在於開放山林政策
+                    之同時亦應增加山林安全教育，包括登山安全措施，風險評估、安全管理及急難處理等。」而非一味以禁止限制。同時，大法官也提到，國外已有許多政府開設的登山學校，能整合各種資訊，此一方向是政府值得借鏡的對象。
+                </article>
+            </div>
+
+            <div class="arg-point">
+                <div class="title-s">
+                    <img class="icon" src="./materials/s3-icon.svg">
+                    <h3>爭議點三：人民基本權利的重新審視</h3>
+                </div>
+                <article class="am30">
+                    許多民眾會好奇，使用自然真的是人民的基本權利嗎？還是這只是我們的娛樂休閒行為而已，和人民的基本自由沒有絕對關係？
+                </article>
+                <article class="am30 mb-30">
+                    大法官意見書中說明，我國憲法雖未明定「自然環境的公眾近用權」，但我們應重新檢討人民使用自然的基本權利。意見書中舉例，瑞典人民的憲法，除了保障特定土地或自然環境之財產權外，人民也享有憲法保障之公眾近用權，得以接近使用自然環境。但是「我憲法對於上開基本權利，並未明文規定。惟基於人民近用自然環境之理念，如將之從實定法提升為憲法層次，自可凸顯我憲法對於人民近用自然環境之重視。」大法官的意思也是說，隨著時代改變，人民近用自然的權利應重新被討論。
+                </article>
+            </div>
+
+            <div>
+                <article class="am30">
+                    目前的水域管制，各地方政府，對許多水域，會因生態、安全等理由，以禁止和外包廠商為管理方式，為此釋憲案出上訴書的許家華律師提及，《發展觀光條例》理應是「發展觀光」，但如果依照目前地方政府的管理方式，一種是給特定廠商經營，但條件很嚴格，另一種是乾脆以危險之由，完全禁止，兩種其實都無助於《發展觀光條例》法條設置的原意，也就是促進地方觀光健全的發展。
+                </article>
+                <article class="am30">
+                    詹森林大法官意見書最後也舉例，2023年3月，英國著名旅遊專欄作家<a href="https://twitter.com/VictoriaPeckham">Janice
+                        Turner</a>應觀光局邀請來台灣深度旅遊，她在<a
+                        href="https://www.thetimes.co.uk/article/my-big-adventure-in-taiwan-qlgckt9mt">《泰唔士報》的專欄</a>中為此旅遊寫了一篇文章〈Why
+                    this Asian Island is the most fascinating place to visit right now〉，裡頭提到，她觀察到台灣是一個風險迴避社會（risk-averse
+                    society），像是日月潭風光很好，但旁邊充滿警告標語，且只有在活動才能下水游泳。大法官認為，「此種消極避險之思維，究竟能防止多少實害，要難考證，但其壓抑親水本性丶箝制冒險精神、妨礙體魄鍛鍊，則可斷言！」
+                </article>
+            </div>
+
+            <div class="share-pdf">
+                <div style="position: relative; width: 100%; height: 0; padding-top: 141.4286%; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden; border-radius: 8px; will-change: transform;">
+                    <iframe loading="lazy"
+                        style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+                        src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFnLtwGrS4&#x2F;view?embed"
+                        allowfullscreen="allowfullscreen" allow="fullscreen">
+                    </iframe>
+                </div>
+                <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFnLtwGrS4&#x2F;view?utm_content=DAFnLtwGrS4&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link"
+                    target="_blank" rel="noopener"></a> 
+            </div>
+        </section>
+
+        <section id="Title4" class="trans-section hor-grid">
+            <div class="title-w">
+                <h2>地方的水域</h2>
+            </div>
+            <img class="svg" src="./materials/trans-sup.png">
+        </section>
+
+        <section id="S4" class="article-section hor-grid">
+            <article class="am30">
+                李元治被開罰的地方，隸屬於宜蘭縣政府管轄範圍，而宜蘭縣也是許多縣市中，目前仍嚴格限制可下水的區域。然而，多水的蘭陽平原，其實孕育出許和水相關的活動與人才。像是在宜蘭長大的Monkey教練，從高中開始就是羅東高商的風帆選手，後來到澎湖科技大學就讀海洋遊憩系，近期也加入運動平台擔任教練，希望推廣立槳等新興的水上運動。
+            </article>
+            <div class="figure mt-30" data-aos="zoom-in">
+                <img src="./materials/s4-training.jpg">
+                <div class="img-caption">冬山河畔有冬山河水上運動訓練基地。攝影／廖芷瑩</div>
+            </div>
+            <article class="am30">
+                Monkey教練從小到大訓練的場地之一，就是冬山河的河道，因為國家在親水公園旁建有運動訓練基地，而Monkey和他的同學們，從小就在冬山河區段上訓練及比賽。恰巧的，冬山河也正是李元治和夥伴們時常下水的地方，因為他們提起，冬山河的水流若非颱風或大雨，平時河水非常緩和，對水上遊憩活動非常友善。
+            </article>
+            <div class="figure mt-30" data-aos="zoom-in">
+                <img src="./materials/s4-localcoachmonkey.jpg">
+                <div class="img-caption">熱愛水上運動的Monkey教練。攝影／廖芷瑩</div>
+            </div>
+            <article class="am30">
+                然而，這條優美的河道，事實上因為行政管轄之故，分屬於不同行政機關，各區段目前被設定的使用目標也不相同。
+            </article>
+            <div class="break"></div>
+            <div id="video-section">
+                <div id="video-view">
+                    <div class="video-wrapper" data-aos="fade-up" data-aos-duration="5000">
+                        <video id="video2" src="./materials/s4-video.mp4"></video>
+                    </div>
+                    <div class="text-wrapper">
+                        <div class="v2-text1 hide" data-aos="slide-up" data-aos-duration="3000">這裡是蘭陽平原</div>
+                        <div class="v2-text2 hide" data-aos="slide-up" data-aos-duration="3000">
+                            其中一條重要的河流是冬山河。它的流量穩定，1980年代政府整治後，中下游河面寬敞。這裡也是近期爭取水域開放的重要河川。</div>
+                        <div class="break hide" data-aos-duration="3000"></div>
+                        <div class="v2-text3 hide" data-aos="slide-up" data-aos-duration="3000">
+                            生態綠洲旁，義成橋到鐵道橋間，管轄單位為宜蘭縣政府。開放縣府核可的小船及浮具業者，可帶客從事獨木舟活動。其餘民眾想下水需先申請。</div>
+                        <div class="v2-text4 hide" data-aos="slide-up" data-aos-duration="3000">
+                            冬山河舊河道（冬山段），管轄單位為冬山鄉公所。目前有業者經營電動小船，但一般民眾禁止下水。</div>
+                        <div class="v2-text5 hide" data-aos="slide-up" data-aos-duration="3000">
+                            著名的冬山河親水公園，民眾可在親水公園搭乘冬山河水上巴士，但無法下水。</div>
+                        <div class="v2-text6 hide" data-aos="slide-up" data-aos-duration="3000">
+                            冬山河舊河道（利澤段），2023年初縣政府剛委託地方單位做完景觀規劃，並釐清土地所有權，但目前管轄權尚未明確。</div>
+                        <div class="v2-text7 hide" data-aos="slide-up" data-aos-duration="3000">
+                            冬山河水上訓練基地。2021年完工，專為水上運動選手設立，平時不開放給船隻與民眾。一旁的水道也專屬訓練所用。</div>
+                        <div class="v2-text8 hide" data-aos="slide-up" data-aos-duration="3000">
+                            宜蘭傳統藝術中心。國立傳統藝術中心旁設有動力小船可搭乘，但一般民眾依舊不能自行下水。</div>
+                    </div>
+                </div>
+            </div>
+            <div class="break" style="height: 100vh;"></div>
+            <div class="break" style="height: 70vh;"></div>
+            <article class="am30">
+                Monkey教練認為，冬山河是非常優秀的划水基地，像是他自己身為運動選手，能曾經擁有這樣的訓練基地，絕對是此生非常難得的青春回憶。然而他同時也提到，運動選手長大後，其實還是希望能回到自己最喜歡的水上運動產業，但「家鄉宜蘭的水域產業少之又少，像是冬山河或者最近剛去的蘭陽溪，各河段都有合適的運動休閒活動可以配合。」Monkey教練說。
+            </article>
+            <article class="am30">
+                他希望，如果有恰當的開發，加上合適的業者，宜蘭的無動力水上休閒運動，絕對是在地最大的潛力產業之一，但目前的限制實在太多，管轄也過於複雜，應該有更多與民眾的溝通，以及政府內部的整合，宜蘭友善環境的運動休閒產業，才能有下一步。
+            </article>
+            <div class="figure mt-30" data-aos="zoom-in">
+                <img src="./materials/s4-river.jpg">
+                <div class="img-caption">冬山河畔景象。攝影／廖芷瑩</div>
+            </div>
+            <article class="am30">
+                對於目前冬山河的情況，宜蘭縣政府工商旅遊處遊憩管理科科長莊振德表示，目前帶客仍須管理，但縣政府會盡量縮短申請時間限制。而整體的規劃目前也交由國立臺灣海洋大學海洋觀光管理學士學程教授，做遊憩活動安全及資源環境乘載量評估，預計年底前會完成，縣政府才會依據此報告做更多規劃。
+            </article>
+            <article class="am30"> 
+                之前民眾曾經提出，是否能在水岸邊掃QRcode就下水，而民眾責任自負？以及河段中間平緩的國手訓練區是否能規劃開放通行？以及跨部會間是否有整合討論？莊振德都說有待討論。另外，雖然《國家賠償法》已修法，的確減輕一點公務人員的負擔，但莊振德表示，公務單位依然需要放置相關的警告標誌，然而目前也還在研擬。
+            </article>
+            <div class="figure mt-30" data-aos="zoom-in">
+                <img src="./materials/s4-warning2.jpg">
+                <div class="img-caption">利澤簡橋旁是國手訓練區，然除選手外，其他人無法下水。攝影／廖芷瑩</div>
+            </div>
+            <article class="am30">
+                但回到地方，當問及冬山村村長林松輝，或其他地方人士是否也參與評估會議，能有機會給縣政府更多意見時，村長則表示他沒收到相關消息。而距離水域開放聯盟抗議至今，也超過兩年的時間，若加上未來評估報告與研擬，也還需兩年以上的工作流程。像是冬山河這種河流，是否能在大政策的方向下，逐漸拉近與人民的距離？實則有待觀察。
+            </article>
+        </section>
+
+        <section id="Title5" class="trans-section hor-grid">
+            <div class="title-w">
+                <h2>前進的方向</h2>
+            </div>
+            <img class="svg" src="./materials/trans-sup.png">
+        </section>
+
+        <section id="S5" class="article-section hor-grid">
+            <article class="am30">
+                開放水域的議題，是全國性的法規問題，更是地方發展的縮影。然而，針對水域開不開放，各方都提出了寶貴意見，為開放水域的未來做準備！
+            </article>
+            <div id="op1" class="opinion">
+                <div class="title-s">
+                    <img class="icon" src="./materials/s5-icon.png">
+                    <h3>要下水 更要認識水 才能與自然相處</h3>
+                </div>
+                <div class="perspective opinion-left" data-aos="zoom-in-right" data-aos-delay="100">
+                    <div class="left-col">
+                        <div class="figure">
+                            <img class="figure-img" src="./materials/s5-opWu.png">
+                            <div class="figure-text img-caption">寶島野孩子創辦人吳宏偉</div>
+                        </div>
+                    </div>
+                    <div class="right-col">
+                        <article class="am30">
+                            吳宏偉是救生教練，也是戶外運動愛好者，更是新型運動平台「寶島野孩子」的創辦人。他希望運動產業的年輕教練們都有自己的一席之地，因此創辦此平台。然而，身為水上運動教練及救生員的他也提醒，台灣的救生教育還不夠普及，在談論水域開放時，政府也更應該注重救生教育的提升，大家才更有本錢下水。
+                        </article>
+                        <article class="am30">
+                            吳宏偉說：「水域具有一定的風險性⋯⋯就像你走路也難免會摔倒，（學習水域相關能力）不可能短期，並且要知道風險在哪裡」
+                        </article>
+                    </div>
+                </div>
+            </div>
+            <div id="op2" class="opinion">
+                <div class="title-s">
+                    <img class="icon" src="./materials/s5-icon.png">
+                    <h3>普及救生教育為當務之急！</h3>
+                </div>
+                <div class="perspective opinion-right" data-aos="zoom-in-right" data-aos-delay="100">
+                    <div class="left-col">
+                        <article class="am30">
+                            林健鴻，人稱Allen教練是資深的救生元教練與三項鐵人玩家，他認為台灣大眾的救生知識非常不足，因此他和中華民國水上救生協會會特地開設小孩與社會人士的救生課，以彌補學校教育的不足。
+                        </article>
+                        <article class="am30">
+                            Allen說：「可否了解這個氣候我能不能下水，是政府的錯，他沒有教⋯⋯另一方面，一直禁止大眾就更無法知道」
+                        </article>
+                    </div>
+                    <div class="right-col">
+                        <div class="figure">
+                            <img class="figure-img" src="./materials/s5-opcoachLin.png">
+                            <div class="figure-text img-caption">救生教練林健鴻</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="op3" class="opinion">
+                <div class="title-s">
+                    <img class="icon" src="./materials/s5-icon.png">
+                    <h3>水中有在地文化 親水是正確選擇</h3>
+                </div>
+                <div class="perspective opinion-left" data-aos="zoom-in-right" data-aos-delay="100">
+                    <div class="left-col">
+                        <div class="figure">
+                            <img class="figure-img" src="./materials/s5-opHuang.png">
+                            <div class="figure-text img-caption">在地返鄉青年黃兵善</div>
+                        </div>
+                    </div>
+                    <div class="right-col">
+                        <article class="am30">
+                            黃兵善在利澤簡老街做環境教育，也帶領許多孩子課後及假日了解宜蘭在地人文及歷史。近期，他更在復興冬山河上的葛瑪蘭族文化。對他而言，我們有接觸水域的機會，才有了解宜蘭在地水文化與生活的關聯。
+                        </article>
+                        <article class="am30">
+                            「我們嘗試用造舟，讓水跟人有多一點連結。過去在地人會去填水⋯⋯但現在不能去玩水，真的蠻可惜的。」
+                        </article>
+                    </div>
+                </div>
+            </div>
+            <div id="op4" class="opinion">
+                <div class="title-s">
+                    <img class="icon" src="./materials/s5-icon.png">
+                    <h3>尊重在地意見 才能有良善水域未來</h3>
+                </div>
+                <div class="perspective opinion-right" data-aos="zoom-in-right" data-aos-delay="100">
+                    <div class="left-col">
+                        <article class="am30">
+                            林松輝在當地住了五十幾年，他說小時候都會在水邊玩，以前居民們可以自由運用水邊的資源，但有新的法規後，居民們都無法親近水。他認為，不論是外包或開放，都要和在地有更多的溝通討論。
+                        </article>
+                        <article class="am30">
+                            「你可以規定大家用救生衣，或者禁止做什麼，水難道只是政府的嗎？」
+                        </article>
+                    </div>
+                    <div class="right-col">
+                        <div class="figure">
+                            <img class="figure-img" src="./materials/s5-opLin.png">
+                            <div class="figure-text img-caption">冬山村村長林松輝</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="op5" class="opinion">
+                <div class="title-s">
+                    <img class="icon" src="./materials/s5-icon.png">
+                    <h3>跟上國際腳步 重新思考水域管理政策</h3>
+                </div>
+                <div class="perspective opinion-left" data-aos="zoom-in-right" data-aos-delay="100">
+                    <div class="left-col">
+                        <div class="figure">
+                            <img class="figure-img" src="./materials/s5-opHsu.png">
+                            <div class="figure-text img-caption">台北海洋科技大學海洋休閒觀光管理系許旻棋教授</div>
+                        </div>
+                    </div>
+                    <div class="right-col">
+                        <article class="am30">
+                            許旻棋專長為海洋觀光遊憩規劃及水域遊憩活動管理等，並擔任多項國內政府水域運動規劃及相關研究計畫委員。他認為，目前國家水域政策應急起直追國際發展趨勢，全面推廣海洋及多元水域活動，除符合海洋國家發展原則，更有利興起社會大眾海洋休閒風氣。以責任自負的觀念，重新思考風險管理，讓社會大眾能共同正面支持海洋及水域遊憩活動的拓展。
+                        </article>
+                        <article class="am30">
+                            「戶外活動的風險不一定都要由政府承擔，如果參與者要責任自負，可以選擇保險等⋯⋯過去的文化告訴我們海洋很危險，但這會讓我們離海岸很遠。」
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="End" class="article-section hor-grid">
+            <div>
+                <article class="am30">
+                    台灣人離身旁的水還有多少距離？
+                </article>
+                <article class="am30">
+                    還有一大段距離要游。
+                </article>
+                <article class="am30">
+                    但如同參與在水域抗爭、遊憩業者、在地文化工作者、民眾及學者都提到的，政府應該廣納意見，並逐步推動人們親近水域政策。而政策也應該改換管理思維，同大法官意見書所指，我們應重新思考台灣人親近自然的基本權，以及管理方式。最後，地方的水往往與地方脈絡息息相關，河溪湖同時也流藏許多在地人的文化與歷史，親近水更是認識在地文史的方式。親水在台灣的確是大挑戰，引起公民討論，並慎思規劃，我們能划向更符合人民所需且自由的親近水域未來！
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="hor-grid">
+            <div class="credit">
+                <div class="title-t">製作團隊</div>
+                <div class="name">
+                    <span>採訪攝影 廖芷瑩</span>
+                </div>
+                <div class="name">
+                    <span>網頁製作 陳宇亭</span>
+                </div>
+            </div>
+            <div class="credit">
+                <div class="title-t">上線時間：2023.06.30 </div>
+                <div class="title-t">Copyright © 2023 </div>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+
+</html>
