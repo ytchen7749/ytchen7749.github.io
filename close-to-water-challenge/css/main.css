@@ -749,9 +749,11 @@ main .trans-section.hor-grid {
         width: 80vw;
         margin: 0 auto;
         position: fixed;
-        top: 14%;
+        top: 100px;
         left: 3%;
-        right: 3%
+        right: 3%;
+        transition: opacity 0.5s;
+        scale: 1.2
     }
 
     #video2 {
