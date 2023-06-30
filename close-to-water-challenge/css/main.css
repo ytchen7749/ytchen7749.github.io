@@ -1,19 +1,20 @@
 /* global setting */
-body {
-    background-color: #a4d9f0b4;
-    font-family: Noto Sans TC;
-    letter-spacing: 0.08em;
-    font-size: 20px;
-    line-height: 1.8;
-}
+
 
 @font-face {
     font-family: 'Noto Sans TC';
     font-style: normal;
-    font-weight: 800;
     src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.woff2) format('woff2'),
         url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.woff) format('woff'),
         url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.otf) format('opentype');
+}
+
+body {
+    background-color: #a4d9f0b4;
+    font-family: 'Noto Sans TC';
+    letter-spacing: 0.08em;
+    font-size: 20px;
+    line-height: 1.8;
 }
 
 .hide {
@@ -34,10 +35,228 @@ a:hover{
     cursor: pointer;
 }
 
+/* font & title */
 @media (min-width: 768px) {
     body {
         max-width: 100%;
         margin: auto;
+    }
+
+    h1{
+        font-size: 70px;
+    }
+
+    h2{
+        font-size: 66px;
+    }
+
+    h3{
+        font-size: 28px;
+    }
+
+    #title H1 {
+        font-size: 70px;
+        font-weight: 800;
+    }
+
+    #title H2 {
+        font-size: 40px;
+        font-weight: 600;
+    }
+
+    .trans-section h2{
+        letter-spacing: 2.5rem;
+        color: rgb(23, 76, 79);
+        font-weight: 900;
+    }
+
+    .title-w{
+        background-size: contain;
+        width: 100%;
+        min-height: 100vh;
+        background-repeat: no-repeat;
+    }
+    
+    #Title1 .title-w {
+        /* background-image: url('../materials/HeadlineTitle1.png'); */
+        background-image: url('../materials/cleanTBG1.png');
+    }
+    
+    #Title2 .title-w {
+        /* background-image: url('../materials/HeadlineTitle2.png'); */
+        background-image: url('../materials/cleanTBG2.png');
+    }
+    
+    #Title3 .title-w {
+        /* background-image: url('../materials/HeadlineTitle3.png'); */
+        background-image: url('../materials/cleanTBG3.png');
+    }
+    
+    #Title4 .title-w {
+        /* background-image: url('../materials/HeadlineTitle4.png'); */
+        background-image: url('../materials/cleanTBG4.png');
+    }
+    
+    #Title5 .title-w {
+        /* background-image: url('../materials/HeadlineTitle5.png'); */
+        background-image: url('../materials/cleanTBG5.png');
+    }
+
+    #Title1 .trans-section{
+        position: relative;
+    }
+
+    #Title1 .title-w h2{
+        position: absolute;
+        top: 11%;
+        left: 4%
+    }
+
+    #Title2 .title-w h2{
+        position: absolute;
+        top: 11%;
+        right: 4%
+    }
+
+    #Title3 .title-w h2{
+        position: absolute;
+        top: 15%;
+        right: 4%
+    }
+
+    #Title4 .title-w h2{
+        position: absolute;
+        top: 10%;
+        left: 5%
+    }
+
+    #Title5 .title-w h2{
+        position: absolute;
+        top: 11%;
+        left: 4%
+    }
+    
+}
+
+/* trans-section */
+
+@media (min-width: 760px) {
+    .trans-section {
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .trans-section .svg {
+        position: absolute;
+        height: auto;
+        animation: shipFloat 3.8s linear infinite;
+    }
+
+    #Title1.trans-section .svg {
+        width: 12%;
+        left: 50%;
+        top: 50%;
+    }
+
+    #Title2.trans-section .svg {
+        width: 10%;
+        left: 40%;
+        top: 55%;
+    }
+
+    #Title3.trans-section .svg {
+        width: 12%;
+        left: 50%;
+        top: 50%;
+    }
+
+    #Title4.trans-section .svg {
+        width: 12%;
+        left: 50%;
+        top: 50%;
+    }
+
+    #Title5.trans-section .svg {
+        width: 15%;
+        left: 35%;
+        top: 40%;
+    }
+
+}
+
+@media (max-width: 450px) {
+    .trans-section {
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .trans-section{
+        background-size: cover;
+        background-position: left 40%;
+        width: 100%;
+        min-height: 100vh;
+        background-repeat: no-repeat;
+    }
+    
+    .trans-section .svg {
+        position: absolute;
+        height: auto;
+        animation: shipFloat 3.8s linear infinite;
+    }
+
+    #Title1 .trans-section .svg {
+        width: 12%;
+        left: 50%;
+        top: 50%;
+    }
+
+    #Title2 .trans-section .svg {
+        width: 10%;
+        left: 40%;
+        top: 55%;
+    }
+
+    #Title3 .trans-section .svg {
+        width: 12%;
+        left: 50%;
+        top: 50%;
+    }
+
+    #Title4 .trans-section .svg {
+        width: 12%;
+        left: 50%;
+        top: 50%;
+    }
+
+    #Title5 .trans-section .svg {
+        width: 15%;
+        left: 35%;
+        top: 50%;
+    }
+
+}
+
+@keyframes shipFloat {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+
+    25% {
+        transform: translateY(0) rotate(3deg);
+    }
+
+    40% {
+        transform: translateY(2px) rotate(3deg);
+    }
+
+    85% {
+        transform: translateY(0px) rotate(5deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0);
     }
 }
 
@@ -106,15 +325,6 @@ main .trans-section.hor-grid {
         width: 55%;
         top: 25%;
         left: 30px
-    }
-
-    #title H2 {
-        font-size: 70px;
-        font-weight: bold;
-    }
-
-    #title H3 {
-        font-size: 36px;
     }
 
     .cover-figure.f1 {
@@ -214,23 +424,8 @@ main .trans-section.hor-grid {
     align-items: center;
 }
 
-/* article-section title */
-@media (min-width: 760px) {
-    .article-section .title img {
-        width: 55vw;
-        margin: 0 auto;
-    }
-}
-
-@media (max-width: 450px) {
-    .article-section .title img {
-        margin: 0 auto;
-        width: 60vw;
-    }
-}
 
 /* article-section article */
-
 @media (min-width: 760px) {
     .article-section article,
     .open-section article{
@@ -302,8 +497,12 @@ main .trans-section.hor-grid {
 }
 
 /* article-section image */
-
 @media (min-width: 760px) {
+    .article-section .title img {
+        width: 55vw;
+        margin: 0 auto;
+    }
+
     .article-section .figure {
         display: flex;
         flex-direction: column;
@@ -336,6 +535,11 @@ main .trans-section.hor-grid {
 }
 
 @media (max-width: 450px) {
+    .article-section .title img {
+        margin: 0 auto;
+        width: 60vw;
+    }
+
     .article-section .figure {
         margin-top: 15px;
     }
@@ -363,7 +567,6 @@ main .trans-section.hor-grid {
 }
 
 /* opening */
-
 #showAns:hover {
     background-color: rgba(0, 123, 255, 1);
 }
@@ -411,7 +614,7 @@ main .trans-section.hor-grid {
     #showAns {
         display: block;
         padding: 10px 20px;
-        font-size: 16px;
+        font-size: 20px;
         font-weight: bold;
         text-align: center;
         text-decoration: none;
@@ -488,178 +691,7 @@ main .trans-section.hor-grid {
     }
 }
 
-
-/* trans-section */
-
-@media (min-width: 760px) {
-    .trans-section {
-        position: relative;
-        display: flex;
-        justify-content: center;
-    }
-    
-    .trans-section{
-        background-size: contain;
-        width: 100%;
-        min-height: 100vh;
-        background-repeat: no-repeat;
-    }
-    
-    #Title1 .trans-section {
-        background-image: url('../materials/HeadlineTitle1.png');
-    }
-    
-    #Title2 .trans-section {
-        background-image: url('../materials/HeadlineTitle2.png');
-    }
-    
-    #Title3 .trans-section {
-        background-image: url('../materials/HeadlineTitle3.png');
-    }
-    
-    #Title4 .trans-section {
-        background-image: url('../materials/HeadlineTitle4.png');
-    }
-    
-    #Title5 .trans-section {
-        background-image: url('../materials/HeadlineTitle5.png');
-    }
-
-    .trans-section .svg {
-        position: absolute;
-        height: auto;
-        animation: shipFloat 3.8s linear infinite;
-    }
-
-    #Title1 .trans-section .svg {
-        width: 12%;
-        left: 50%;
-        top: 50%;
-    }
-
-    #Title2 .trans-section .svg {
-        width: 10%;
-        left: 40%;
-        top: 55%;
-    }
-
-    #Title3 .trans-section .svg {
-        width: 12%;
-        left: 50%;
-        top: 50%;
-    }
-
-    #Title4 .trans-section .svg {
-        width: 12%;
-        left: 50%;
-        top: 50%;
-    }
-
-    #Title5 .trans-section .svg {
-        width: 15%;
-        left: 35%;
-        top: 50%;
-    }
-
-}
-
-@media (max-width: 450px) {
-    .trans-section {
-        position: relative;
-        display: flex;
-        justify-content: center;
-    }
-    
-    .trans-section{
-        background-size: cover;
-        background-position: left 40%;
-        width: 100%;
-        min-height: 100vh;
-        background-repeat: no-repeat;
-    }
-    
-    #Title1 .trans-section {
-        background-image: url('../materials/HeadlineTitle1.png');
-    }
-    
-    #Title2 .trans-section {
-        background-image: url('../materials/HeadlineTitle2.png');
-    }
-    
-    #Title3 .trans-section {
-        background-image: url('../materials/HeadlineTitle3.png');
-    }
-    
-    #Title4 .trans-section {
-        background-image: url('../materials/HeadlineTitle4.png');
-    }
-    
-    #Title5 .trans-section {
-        background-image: url('../materials/HeadlineTitle5.png');
-    }
-
-    .trans-section .svg {
-        position: absolute;
-        height: auto;
-        animation: shipFloat 3.8s linear infinite;
-    }
-
-    #Title1 .trans-section .svg {
-        width: 12%;
-        left: 50%;
-        top: 50%;
-    }
-
-    #Title2 .trans-section .svg {
-        width: 10%;
-        left: 40%;
-        top: 55%;
-    }
-
-    #Title3 .trans-section .svg {
-        width: 12%;
-        left: 50%;
-        top: 50%;
-    }
-
-    #Title4 .trans-section .svg {
-        width: 12%;
-        left: 50%;
-        top: 50%;
-    }
-
-    #Title5 .trans-section .svg {
-        width: 15%;
-        left: 35%;
-        top: 50%;
-    }
-
-}
-
-@keyframes shipFloat {
-    0% {
-        transform: translateY(0) rotate(0);
-    }
-
-    25% {
-        transform: translateY(0) rotate(3deg);
-    }
-
-    40% {
-        transform: translateY(2px) rotate(3deg);
-    }
-
-    85% {
-        transform: translateY(0px) rotate(5deg);
-    }
-
-    100% {
-        transform: translateY(0) rotate(0);
-    }
-}
-
 /* interactive map */
-
 @media (min-width: 760px) {
     #interact-map {
         display: flex;
@@ -752,8 +784,9 @@ main .trans-section.hor-grid {
         top: 100px;
         left: 3%;
         right: 3%;
-        transition: opacity 0.5s;
-        scale: 1.2
+        scale: 1.2;
+        transition: transform 0.5s ease;
+        
     }
 
     #video2 {
@@ -790,7 +823,6 @@ main .trans-section.hor-grid {
         background-color: rgba(232, 236, 236, 0.7);
         width: 32%;
         padding: 20px 18px;
-        font-size: 20px;
         left: 12%;
         top: 30%
     }
@@ -803,7 +835,6 @@ main .trans-section.hor-grid {
         position: fixed;
         width: 28%;
         padding: 10px 15px;
-        font-size: 20px;
         left: 14%;
         top: 30%
     }
@@ -816,7 +847,6 @@ main .trans-section.hor-grid {
         position: fixed;
         width: 30%;
         padding: 10px 15px;
-        font-size: 20px;
         right: 16%;
         top: 52%
     }
@@ -829,7 +859,6 @@ main .trans-section.hor-grid {
         background-color: rgba(232, 236, 236, 0.8);
         width: 35%;
         padding: 10px 15px;
-        font-size: 20px;
         left: 20%;
         top: 30%
     }
@@ -842,7 +871,6 @@ main .trans-section.hor-grid {
         background-color: rgba(232, 236, 236, 0.8);
         width: 38%;
         padding: 10px 12px;
-        font-size: 20px;
         left: 12%;
         top: 62%
     }
@@ -855,7 +883,6 @@ main .trans-section.hor-grid {
         background-color: rgba(232, 236, 236, 0.8);
         width: 33%;
         padding: 10px 15px;
-        font-size: 20px;
         right: 12%;
         top: 24%
     }
@@ -868,7 +895,6 @@ main .trans-section.hor-grid {
         background-color: rgba(232, 236, 236, 0.8);
         width: 35%;
         padding: 10px 15px;
-        font-size: 20px;
         right: 12%;
         top: 45%
     }
@@ -893,9 +919,7 @@ main .trans-section.hor-grid {
         flex-grow: auto;
         display: block;
     }
-}
 
-@media (max-width: 450px) {
     #video-view {
         position: relative;
         margin: 0 auto;
@@ -956,6 +980,7 @@ main .trans-section.hor-grid {
     }
 }
 
+/* opinion */
 @media (min-width: 760px) {
     .perspective {
         display: flex;
