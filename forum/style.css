@@ -71,6 +71,7 @@ body {
     background: #FFFFFF;
     border-radius: 5px;
     display: grid;
+    min-width: 740px;
 }
 
     .post-profile{
@@ -284,4 +285,5 @@ body {
         position: relative;
         right: -670px;
         top: 10px;
+        width: 100px;
     }

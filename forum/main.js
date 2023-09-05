@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitButton = document.getElementById('submitButton');
     submitButton.addEventListener('click', () => {
         const messageInput = document.getElementById('messageInput');
-        const message = messageInput.value.trim();
+        const message = messageInput.value;
 
         if (message !== '') {
             saveMessage(message);
