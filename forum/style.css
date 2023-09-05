@@ -282,8 +282,6 @@ body {
     #count{
         grid-area: inherit;
         position: relative;
-        left: 675px;
+        right: -670px;
         top: 10px;
-        /* padding: 0.1rem 0 0 0;
-        font-size: 0.875rem; */
     }
