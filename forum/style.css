@@ -2,7 +2,7 @@ body {
     background: #00324E;
     color: #333;
     font-family: Arial, sans-serif;
-    user-select: none;
+    /* user-select: none; */
 }
 
 .header{
@@ -70,6 +70,7 @@ body {
     padding: 10px 20px;
     background: #FFFFFF;
     border-radius: 5px;
+    display: grid;
 }
 
     .post-profile{
@@ -91,7 +92,7 @@ body {
     }
 
     .post-container .post-content{
-        padding: 20px 40px;
+        padding: 10px 40px;
         font-weight: 400;
     }
 
@@ -111,6 +112,12 @@ body {
     .post-content .post-metadata .date{
         margin-left: 10px;
         color: #979797c7;
+    }
+
+    .post-text img{
+        margin-top: 15px;
+        margin-left: -20px;
+        width: 695px
     }
 
     .post-content .p{
@@ -147,9 +154,33 @@ body {
     .input #submitButton{
         grid-area: inherit;
         position: relative;
-        left: 615px;
-        top: 13px
+        left: 40%;
+        top: 10px
     }
+
+    #messageList{
+        justify-self: center;
+        width: 90%;
+        height: auto;
+        padding: 0px 20px;
+        background: #FFFFFF;
+        border-radius: 5px;
+    }
+
+    .reply-container{
+        padding: 5px 5px
+    }
+
+    .reply-content{
+        font-size: 16px;
+        margin: 10px 0px 20px 0px;
+        line-height: 1.5em;
+    }
+
+    .reply-metadata .seq{
+        margin-right: 20px
+    }
+
 
     #messageInput{
         width: 93%;
@@ -196,8 +227,8 @@ body {
         text-align: center;
         touch-action: manipulation;
         transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
-        user-select: none;
-        -webkit-user-select: none;
+        /* user-select: none; */
+        /* -webkit-user-select: none; */
         vertical-align: middle;
     }
 
@@ -242,8 +273,17 @@ body {
         text-align: center;
         touch-action: manipulation;
         transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
-        user-select: none;
-        -webkit-user-select: none;
+        /* user-select: none;
+        -webkit-user-select: none; */
         vertical-align: middle;
         display: none;
+    }
+
+    #count{
+        grid-area: inherit;
+        position: relative;
+        left: 675px;
+        top: 10px;
+        /* padding: 0.1rem 0 0 0;
+        font-size: 0.875rem; */
     }

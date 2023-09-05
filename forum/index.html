@@ -28,7 +28,8 @@
                         <span class="link">心情板</span>
                         <span class="date">昨天 01:43</span>
                     </div>
-                    <div class="p">
+                    <div class="post-text"><img src="./assests/text.png"></div>
+                    <!-- <div class="p">
                         這幾天我家妹妹的情況讓我很擔心，想請教一下大家有沒有類似的經驗，可以提供一些建議。我家妹妹最近情緒很低落，已經連續好幾天都沒吃什麼東西，好像也沒有去學校上課。我前幾天無意中發現她的手腕有些細微的傷口，讓我非常擔心她是不是在自殘...
                     </div>
                     <div class="p">妹妹前陣子意識到自己是雙性戀，在不久前寫信和家裡出櫃，但我們家相對比較保守，爸媽對於 LGBTQ+
@@ -38,7 +39,7 @@
                     </div>
                     <div class="p">
                         不知道有沒有人有類似經驗，可以和我分享要怎麼跟爸媽說明什麼是心理假，還有怎麼解釋什麼是雙性戀，讓他們可以理解妹妹的身份認同和身心狀況，讓爸媽知道妹妹很需要他們的理解和支持，讓他們願意簽假單呢？希望各位熱心的網友可以給我一些建議，拜託了，我真的很需要大家的幫忙！
-                    </div>
+                    </div> -->
                     <div class="tag-cloud">
                         <span class="tag">#高中生</span>
                         <span class="tag">#憂鬱</span>
@@ -48,12 +49,27 @@
                     </div>
                     <hr>
                 </div>
+                <div id="messageList">
+                    <div class="reply-container">
+                        <div class="reply-content">
+                        </div>
+                        <div class="reply-metadata">
+                            <span class="seq">B1</span>
+                            <span class="date">22:30</span>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
                 <div class="input">
-                    <textarea id="messageInput" placeholder="輸入你的留言"></textarea>
+                    <textarea id="messageInput" placeholder="輸入你的留言" maxlength="500"></textarea>
+                    <div id="count">
+                        <span id="current">0</span>
+                        <span id="maximum">/ 500</span>
+                    </div>
                     <button id="submitButton">送出</button>
                     <button id="clearButton">清除</button>
                 </div>
-                <div id="messageList"></div>
+                
             </div>
         </div>
     </body>
