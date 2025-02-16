@@ -1,0 +1,56 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Success</title>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Google 表單跨域提交監聽</title>
+    </head>
+
+    <body>
+        <iframe id="googleForm"
+            src="https://docs.google.com/forms/d/e/1FAIpQLSfZRMJvlKN62eoZPEdDMU-bbtJ9FBdyHD7KXHJ0Qq6dBjb7ng/viewform?embedded=true"
+            width="640" height="800" frameborder="0" marginheight="0" marginwidth="0">載入中…</iframe>
+
+        <button id="submitBtn" disabled>表單提交完成後啟用</button>
+
+        <script>
+            const submitBtn = document.getElementById('submitBtn');
+            const webhookURL = 'https://script.google.com/macros/s/AKfycbx7v5r287OxR09KnlhrXj0llaSmG9Frr8kd7BWGz0n2Bb_M3ePumURDGIXVpTIUuq5ksg/exec';
+
+            async function checkFormSubmission() {
+                try {
+                    const response = await fetch(webhookURL, {
+                        method: 'POST'
+                    });
+                    const data = await response.json();  
+                    if (data.status === 'success') {
+                        console.log('表單提交完成：', data);
+                        submitBtn.disabled = false;
+                    }
+                } catch (error) {
+                    console.log('錯誤:', error);
+                }
+            }
+
+
+            // 每5秒檢查一次表單提交狀態
+            setInterval(checkFormSubmission, 5000);
+        </script>
+
+    </body>
+
+    </html>
+
+</body>
+
+</html>
