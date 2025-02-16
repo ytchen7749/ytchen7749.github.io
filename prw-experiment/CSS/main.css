@@ -1,0 +1,415 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+/*Global Use*/
+.main-container {
+    height: 100%;
+    width: 80%;
+    margin: 40px auto
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    background-color: #2a6fdb;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header .logo a,
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.returnResult {
+    width: 100%;
+    height: 80px;
+    font-size: large;
+    color: white;
+    background-color: #064984;
+    padding: 20px;
+    display: grid;
+    align-items: center;
+}
+
+#returndoctor .doctorcard {
+    width: 65vw;
+    display: flex;
+    background-color: #b7ddff;
+    margin: 15px auto;
+    place-items: center;
+}
+
+#doctor-profile {
+    display: grid;
+    justify-content: space-around;
+}
+
+.doctorcard {
+    background-color: #b7ddff;
+    width: 65vw;
+    height: 20vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding: 20px
+}
+
+.doctorcard .avatar {
+    vertical-align: middle;
+    width: 8vw;
+    height: 8vw;
+    border-radius: 50%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.hero {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.hero h1 {
+    font-size: 32px;
+    color: #2a6fdb;
+}
+
+.search-section {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    position: relative;
+}
+
+.search-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.search-bar select {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-bar button {
+    background: #2a6fdb;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.message {
+    margin-top: 20px;
+    font-size: 18px;
+    color: red;
+    display: none;
+}
+
+.wrap {
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* comment page */
+#returncomment {
+    width: 600px;
+    margin: 20px auto;
+    /*margin-left: 20px;*/
+}
+
+#commentpage.doctorcard {
+    width: 450px;
+    display: flex;
+    background-color: aliceblue;
+    margin: 20px auto;
+    /*margin-left: 20px;*/
+    padding: 30px 20px
+}
+
+.reviewer {
+    text-align: center;
+}
+
+.single-comment-container {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.commentcard {
+    margin-top: 20px;
+    padding: 25px 30px;
+    background-color: ghostwhite;
+    width: 560px;
+    position: sticky;
+}
+
+.avatar {
+    vertical-align: middle;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.IV .reviewer {
+    text-align: center;
+    margin: 20px
+}
+
+.endofthetest {
+    padding: 20px;
+    width: 800px;
+    margin: 0 auto;
+}
+
+.readmoreButton {
+    padding: 5px 0px;
+    margin-left: 3px;
+    border-radius: 4px;
+    background-color: white;
+    color: black;
+    border: 2px solid #0b69bb;
+    box-shadow: 0px 0.8px #818181;
+}
+
+.readmoreButton:hover {
+    background-color: #0b69bb;
+    color: white;
+    box-shadow: 0px 0.8px #818181;
+}
+
+.hide {
+    display: none;
+}
+
+.doctor_info {
+    margin: 0px 0px 0px 40px;
+    width: 30vw
+}
+
+.doctorcard .rightButton {
+    display: grid;
+    place-items: center;
+    width: 15vw;
+}
+
+.doctorcard .rightButton .readmoreButton {
+    display: inline-block;
+    padding: 15px 20px;
+}
+
+.wrapper .serial {
+    margin: 10px;
+    padding: 0px 15px;
+    font-size: 18px;
+}
+
+.ans-btn {
+    display: grid;
+    justify-content: center;
+    margin: 10px 20px
+}
+
+.ans-btn button {
+    padding: 10px 45px;
+    margin-left: 5px;
+    border-radius: 6px;
+    background-color: white;
+    color: black;
+    border: 2px solid #5caf4c;
+    /* Green */
+}
+
+.ans-btn button:hover {
+    background-color: #5caf4c;
+    ;
+    /* Green */
+    color: white;
+}
+
+.ans-btn button:disabled {
+    border: 1px solid #999999;
+    background-color: #e3e3e3;
+    color: #666666;
+}
+
+.ans-btn .instruction {
+    margin: 10px
+}
+
+.sticky {
+    padding: sticky;
+    top: 0
+}
+
+.review-container {
+    display: grid;
+    justify-content: center;
+
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap {
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* comment page */
+.fill-survey-btn {
+    padding: 8px 12px;
+    background-color: #3b82f6;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 20px;
+}
+
+.fill-survey-btn:hover {
+    background-color: #2671eb;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.fill-survey-btn:disabled {
+    background-color: #10b981;
+    color: #fff;
+    box-shadow: none;
+    cursor: default;
+}
+
+.single-comment-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px
+}
+
+.reviewer {
+    flex: 2;
+}
+
+.wrapper {
+    flex: 5.5;
+}
+
+.fill-survey-btn {
+    flex: 1.5;
+}
+
+.google-form-container {
+    display: flex;
+    justify-content: center;
+}
+
+.google-form-container.hide {
+    display: none;
+}
+
+#returncomment {
+    width: 600px;
+    margin: 20px auto;
+}
+
+.reviewer {
+    text-align: center;
+}
+
+.commentcard {
+    margin-top: 20px;
+    padding: 25px 30px;
+    background-color: ghostwhite;
+    width: 60vw;
+    position: sticky;
+}
+
+.avatar {
+    vertical-align: middle;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.fix-container {
+    position: relative;
+    width: 180px;
+    height: 100px;
+}
+
+img[src='./assets/A.png'] {
+    width: 115%;
+    height: auto;
+    position: absolute;
+    top: -30px;
+    left: -10px;
+}
+
+img[src='./assets/C2.png'] {
+    width: 85%;
+    height: auto;
+    position: absolute;
+    top: -10px;
+    left: 10px;
+}
+
+.comment-content {
+    padding: 12px 23px;
+    border: 1em;
+    display: flex;
+}
+
+.checked {
+    color: orange;
+}
+
+.rating {
+    padding: 0px 23px;
+}

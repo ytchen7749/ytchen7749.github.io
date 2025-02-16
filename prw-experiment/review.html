@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="./CSS/main.css" />
+    <link rel="stylesheet" type="text/css" href="./CSS/list.css">
+    <link rel="stylesheet" type="text/css" href="./CSS/chart.css">
+    <link rel="stylesheet" type="text/css" href="./CSS/comment.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/review.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo"><a href="./index.html">醫生評論網</a></div>
+        <ul class="nav-links">
+            <li><a href="#">登入</a></li>
+            <li><a href="#">註冊</a></li>
+        </ul>
+    </header>
+    <main class="main-container">
+        <section id="doctor-profile">
+            <article class="doctorcard">
+                <img class="avatar" src="./assets/image_doctor.png" alt="醫生圖片">
+                <div class="doctor_info">
+                    <h2>郝嘉榮 醫師</h2>
+                    <h3>家在診所</h3>
+                    <address>臺北市大安區敦化南路二段350號1樓</address>
+                    <p>聯絡電話：02-2734-7509</p>
+                </div>
+            </article>
+        </section>
+
+        <section id="reviews" class="review-container">
+                <article id="review-content" class="commentcard" data-review="">
+                    <div class="single-comment-container">
+                        <div class="reviewer"><img class="avatar" src="" alt="使用者頭像"></div>
+                        <div class="wrapper">
+                            <div class="serial"></div>
+                            <div class="rating"></div>
+                            <div class="comment-content"><span></span></div>
+                        </div>
+                    </div>
+                </article>
+        </section>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>醫生評論網</title>
+    <link rel="stylesheet" type="text/css" href="./CSS/main.css">
+    <script defer src="./js/index.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="./index.html"><span class="home">醫生評論網</span></a></div>
+        <ul class="nav-links">
+            <li><a href="./list.html">登入</a></li>
+            <li><a href="#">註冊</a></li>
+        </ul>
+    </header>
+    <main>
+        <section class="hero">
+            <h1>尋找最適合您的醫生</h1>
+        </section>
+        
+        <section class="search-section">
+            <div class="search-bar">
+                <select id="category-select" onchange="resetMessage()">
+                    <option value="">請選擇醫生科別</option>
+                    <option value="家醫科">家醫科</option>
+                    <option value="身心科">身心科</option>
+                    <option value="牙科">牙科</option>
+                    <option value="眼科">眼科</option>
+                </select>
+                <select id="city-select" onchange="updateDistricts(); resetMessage();">
+                    <option value="">請選擇縣市</option>
+                    <option value="台北市">台北</option>
+                    <option value="新北市">新北</option>
+                    <option value="基隆市">基隆</option>
+                    <option value="桃園市">桃園</option>
+                    <option value="新竹縣">新竹</option>
+                    <option value="苗栗縣">苗栗</option>
+                    <option value="台中市">台中</option>
+                    <option value="彰化縣">彰化</option>
+                    <option value="南投縣">南投</option>
+                    <option value="雲林縣">雲林</option>
+                    <option value="嘉義縣">嘉義</option>
+                    <option value="台南市">台南</option>
+                    <option value="高雄市">高雄</option>
+                    <option value="宜蘭縣">宜蘭</option>
+                    <option value="花蓮縣">花蓮</option>
+                    <option value="台東縣">台東</option>
+                    <option value="澎湖縣">澎湖</option>
+                    <option value="金門縣">金門</option>
+                </select>
+                <select id="district-select" onchange="resetMessage()">
+                    <option value="">請選擇地區</option>
+                </select>
+                <button onclick="searchDoctors()">🔍</button>
+            </div>
+        </section>
+        <div id="message" class="message"></div>
+    </main>
+</body>
+</html>

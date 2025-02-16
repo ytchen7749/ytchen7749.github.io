@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="./CSS/main.css">
+        <link rel="stylesheet" type="text/css" href="./CSS/list.css">
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        <script src="./js/list.js"></script>
+        <title>找醫生-搜尋結果</title>
+    </head>
+
+    <header>
+        <div class="logo"><a href="./index.html"><span class="home">醫生評論網</span></a></div>
+        <ul class="nav-links">
+            <li><a href="#">登入</a></li>
+            <li><a href="#">註冊</a></li>
+        </ul>
+    </header>
+
+    <body>
+        <div class="returnResult">
+            <span>以下為台北市大安區的搜尋結果：共有 9 位醫生</span>
+        </div>
+
+        <div id="returndoctor" class="container">
+            <div class="doctorcard">
+                <img class="avatar" src="./assets/image_doctor.png">
+                <div class="doctor_info">
+                    <h2>郝嘉榮 醫師</h2>
+                    <h3>家在診所</h3>
+                    <div>臺北市大安區敦化南路二段350號1樓</div>
+                    <div>聯絡電話：02-2734-7509</div>
+                </div>
+                <div class="rightButton">
+                    <button type="button" data-id="G1" class="readmoreButton gotoReview">
+                        <span>查看醫師評論</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="doctorcard">
+                <img class="avatar" src="./assets/image_doctor.png">
+                <div class="doctor_info">
+                    <h2>陳耀文 醫師</h2>
+                    <h3>功緣診所</h3>
+                    <div>臺北市大安區樂業街561號</div>
+                    <div>聯絡電話：02-8735-1467</div>
+                </div>
+                <div class="rightButton">
+                    <button type="button" data-id="G2" class="readmoreButton gotoReview">
+                        <span>查看醫師評論</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="doctorcard">
+                <img class="avatar" src="./assets/image_doctor.png">
+                <div class="doctor_info">
+                    <h2>劉淑卿 醫師</h2>
+                    <h3>樂健康聯合診所</h3>
+                    <div>臺北市大安區和平東路三段475巷66號</div>
+                    <div>聯絡電話：02-2312-7690</div>
+                </div>
+                <div class="rightButton">
+                    <button type="button" data-id="G3" class="readmoreButton gotoReview">
+                        <span>查看醫師評論</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="doctorcard">
+                <img class="avatar" src="./assets/image_doctor.png">
+                <div class="doctor_info">
+                    <h2>洪雅亭 醫師</h2>
+                    <h3>禾齡診所</h3>
+                    <div>臺北市大安區復興南路二段291號</div>
+                    <div>聯絡電話：02-2701-0356</div>
+                </div>
+                <div class="rightButton">
+                    <button type="button" data-id="G4" class="readmoreButton gotoReview">
+                        <span>查看醫師評論</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="doctorcard">
+                <img class="avatar" src="./assets/image_doctor.png">
+                <div class="doctor_info">
+                    <h2>林芳民 醫師</h2>
+                    <h3>康沐聯合診所</h3>
+                    <div>臺北市大安區瑞安街208巷82弄106號</div>
+                    <div>聯絡電話：02-2706-5945</div>
+                </div>
+                <div class="rightButton">
+                    <button type="button" data-id="G5" class="readmoreButton gotoReview">
+                        <span>查看醫師評論</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="doctorcard">
+                <img class="avatar" src="./assets/image_doctor.png">
+                <div class="doctor_info">
+                    <h2>張夏年 醫師</h2>
+                    <h3>心必順診所</h3>
+                    <div>臺北市大安區新生南路二段96號</div>
+                    <div>聯絡電話：02-2358-7004</div>
+                </div>
+                <div class="rightButton">
+                    <button type="button" data-id="G6" class="readmoreButton gotoReview">
+                        <span>查看醫師評論</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="doctorcard">
+                <img class="avatar" src="./assets/image_doctor.png">
+                <div class="doctor_info">
+                    <h2>李明和 醫師</h2>
+                    <h3>蘭傑診所</h3>
+                    <div>臺北市大安區龍泉街199號</div>
+                    <div>聯絡電話：02-2369-5561</div>
+                </div>
+                <div class="rightButton">
+                    <button type="button" data-id="G7" class="readmoreButton gotoReview">
+                        <span>查看醫師評論</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="doctorcard">
+                <img class="avatar" src="./assets/image_doctor.png">
+                <div class="doctor_info">
+                    <h2>王志勇 醫師</h2>
+                    <h3>安久診所</h3>
+                    <div>臺北市大安區仁愛路三段24巷35-1號</div>
+                    <div>聯絡電話：02-2325-9082</div>
+                </div>
+                <div class="rightButton">
+                    <button type="button" data-id="G8" class="readmoreButton gotoReview">
+                        <span>查看醫師評論</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="doctorcard">
+                <img class="avatar" src="./assets/image_doctor.png">
+                <div class="doctor_info">
+                    <h2>潘映逵 醫師</h2>
+                    <h3>鵬程診所</h3>
+                    <div>臺北市大安區四維路66巷12號</div>
+                    <div>聯絡電話：02-2707-8655</div>
+                </div>
+                <div class="rightButton">
+                    <button type="button" data-id="G9" class="readmoreButton gotoReview">
+                        <span>查看醫師評論</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>
