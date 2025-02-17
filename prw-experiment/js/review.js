@@ -151,7 +151,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const content = review.map((item, index) => `
         <section id=reviewSection${index + 1}>
             <div class="single-comment-container">
-                <div class="reviewer fix-container"><img class="avatar" src="${item.avatar}" alt="使用者頭像"></div>
+                <div class="reviewer fix-container">
+                    <img class="avatar" src="${item.avatar}" alt="使用者頭像">
+                </div>
                 <div class="wrapper">
                     <div class="serial">#${index + 1}</div>
                     <div class="rating">

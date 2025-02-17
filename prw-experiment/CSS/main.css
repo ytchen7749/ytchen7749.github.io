@@ -167,10 +167,6 @@ body {
     padding: 30px 20px
 }
 
-.reviewer {
-    text-align: center;
-}
-
 .single-comment-container {
     display: inline-flex;
     align-items: center;
@@ -183,18 +179,6 @@ body {
     background-color: ghostwhite;
     width: 560px;
     position: sticky;
-}
-
-.avatar {
-    vertical-align: middle;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-}
-
-.IV .reviewer {
-    text-align: center;
-    margin: 20px
 }
 
 .endofthetest {
@@ -371,33 +355,42 @@ body {
     position: sticky;
 }
 
-.avatar {
-    vertical-align: middle;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-}
-
 .fix-container {
     position: relative;
-    width: 180px;
-    height: 100px;
+    width: 10vw;
+    height: 10vw;
+    display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* 圖像置中 */
+  align-items: center; /* 垂直置中 */
 }
 
-img[src='./assets/A.png'] {
-    width: 115%;
+.fix-container .avatar {
+    vertical-align: middle;
+    width: 90%;
     height: auto;
-    position: absolute;
-    top: -30px;
-    left: -10px;
+    border-radius: 50%;
+    object-fit: cover; 
+    object-position: center; 
 }
 
-img[src='./assets/C2.png'] {
-    width: 85%;
+
+.fix-container img[src='./assets/A.png'] {
+    width: 150%;
     height: auto;
     position: absolute;
-    top: -10px;
-    left: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.fix-container img[src='./assets/C2.png'] {
+    width: 110%;
+    height: auto;
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .comment-content {
