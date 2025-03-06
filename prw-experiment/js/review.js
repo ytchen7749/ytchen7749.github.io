@@ -132,6 +132,18 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
     };
 
+    const formUrls = [
+        "https://docs.google.com/forms/d/e/1FAIpQLScIlSRUb-L6j8V2kUXxet0gLmIEhpnJricxGQ7bVlQGFJmULg/viewform?embedded=true", 
+        "https://docs.google.com/forms/d/e/1FAIpQLScXn6ebJ-fOevhMyR5tfmbCX67b7an_Z9ukKKzHxE1QAnyYgg/viewform?embedded=true",
+        "https://docs.google.com/forms/d/e/1FAIpQLSe9LyqvFd_4U-3BAvPvFInbqIRHeT5N8NVN-8tUh9f2lv5ZTg/viewform?embedded=true",
+        "https://docs.google.com/forms/d/e/1FAIpQLSdSdBDxjFJIX956aeMzSFY2RCyWcoKedb3PoreBO0ziw61qZQ/viewform?embedded=true",
+        "https://docs.google.com/forms/d/e/1FAIpQLSfkW_uMB1ZeNOXafZ5swkc6P3LxatbgM8enKt77rJ1v2zLaQw/viewform?embedded=true",
+        "https://docs.google.com/forms/d/e/1FAIpQLSdYaBz2U8k_-fBKBmT3CRte2lpH_pnZEroxe2kzwZ7Rnqq-XA/viewform?embedded=true",
+        "https://docs.google.com/forms/d/e/1FAIpQLSd7cmzuuvFtjVQGHPHvuvOP8tk2w7UX52CygADopF7Q0p-oqA/viewform?embedded=true",
+        "https://docs.google.com/forms/d/e/1FAIpQLSfp-yR3L4kuJe-0JBrV11sKIQq1g0oZF5GioSlYvx4tbjdptw/viewform?embedded=true",
+        "https://docs.google.com/forms/d/e/1FAIpQLSfiXhBvM1VSWj9vmld9wRcgM_ZuBlOd47BbDoU3parmKUKlcg/viewform?embedded=true",
+    ]
+
     if (doctorInfo) {
         document.getElementById('doctor-profile').innerHTML = `
             <article class="doctorcard">
@@ -164,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <button id="fillSurveyBtn${index + 1}" class="fill-survey-btn">填寫問卷</button>
             </div>
             <div id="google-form-container${index + 1}" class="google-form-container ans-container hide">
-                <iframe id="Form${index + 1}" src="https://docs.google.com/forms/d/e/1FAIpQLSfZRMJvlKN62eoZPEdDMU-bbtJ9FBdyHD7KXHJ0Qq6dBjb7ng/viewform?embedded=true" width="640" height="800" frameborder="0"></iframe>
+                <iframe id="Form${index + 1}" src="${formUrls[groupCode-1]}" width="640" height="800" frameborder="0"></iframe>
             </div>
         </section>
         <hr>
