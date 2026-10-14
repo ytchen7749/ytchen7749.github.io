@@ -13,7 +13,7 @@ const topicInfo = {
 
 // ---------- 2. 評論內容 ----------
 // 條件代碼：CP = 有禮正評、CN = 有禮負評、UN = 不文明負評（沿用前一版命名）
-// rating 是星等（1~5），avatar 是頭像圖片
+// avatar 是頭像圖片
 const commentInfo = {
     CP1: { avatar: './assets/A.png',  content: '有用，食慾會降低很多，飢餓感真的會明顯減少，東西吃少了體重自然也比較容易下降。瘦瘦針就是讓整個減重過程更順利一點。' },
     CP2: { avatar: './assets/B1.png', content: '主要就是讓食慾降低，減少一直想吃東西的感覺，對體重下降確實有幫助。打了之後，減重比較不容易一直卡在原地。' },
@@ -133,7 +133,7 @@ const reviewData = {
 };
 
 // ---------- 4. 各組的 Google 表單 ----------
-// formUrls[0] 是第 1 組，依此類推
+// formUrls[0] 是第 1 組，依此類推（沿用前一版的 9 個表單）
 const formUrls = [
     'https://docs.google.com/forms/d/e/1FAIpQLSc5o0SKEBqX_e_CVh5NZOedl0x5f5tEp2hTV8iZ4gJWgDqO1Q/viewform?embedded=true',   // G1
     'https://docs.google.com/forms/d/e/1FAIpQLSf1Bf9gnjCZ-e1VJSVfzJ82ftYdQSCNPPrfJ2vY-u8lqtfm1A/viewform?embedded=true',   // G2
@@ -166,10 +166,6 @@ function buildFormUrl(base, item) {
     return { url, error: '' };
 }
 
-function stars(n) {
-    return Array.from({ length: 5 }, (_, i) =>
-        '<span class="' + (i < n ? 'on' : '') + '">★</span>').join('');
-}
 
 document.addEventListener('DOMContentLoaded', () => {
     const group = resolveGroup();
@@ -207,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <button type="button" class="fill-survey-btn" data-i="${i}">填寫問卷</button>
             </div>
             <div class="survey-frame hide" id="survey-${i}">
-                <iframe height="800" title="問卷 ${i + 1}"></iframe>
+                <iframe height="1900" title="問卷 ${i + 1}"></iframe>
             </div>
         </article>`;
     }).join('');
@@ -237,6 +233,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const iframe = box.querySelector('iframe');
             box.classList.remove('hide');
             if (!iframe.src) {
+                const form = buildFormUrl(formUrls[group - 1], items[i]);
+                if (form.error) {
+                    box.innerHTML = `<p class="notice">第 ${group} 組的表單網址有問題：${form.error}</p>`;
+                    return;
+                }
                 watchFormSubmit(iframe, REVIEW_FORM_PAGES, () => {
                     box.classList.add('hide');
                     btn.textContent = '已完成填答';
@@ -244,7 +245,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     completed++;
                     updateProgress();
                 });
-                iframe.src = buildFormUrl(formUrls[group - 1], items[i]);
+                iframe.src = form.url;
             }
         });
     });
