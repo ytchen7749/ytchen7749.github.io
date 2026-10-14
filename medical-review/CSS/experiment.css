@@ -1,0 +1,217 @@
+/* ===== 新版實驗頁面共用樣式（pretest / index / review） ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --brand: #2a6fdb;
+    --brand-dark: #1f56ad;
+    --bg: #f4f5f9;
+    --card: #ffffff;
+    --text: #2b2f36;
+    --muted: #6b7280;
+    --line: #e4e7ee;
+    --star: #f5a623;
+    --ok: #10b981;
+}
+
+body {
+    font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* ---- 頁首 ---- */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--brand);
+    color: #fff;
+    padding: 14px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .12);
+}
+.site-header .logo { font-size: 20px; font-weight: 700; letter-spacing: .5px; }
+.site-header .nav { list-style: none; display: flex; gap: 20px; font-size: 16px; }
+.site-header .nav span { opacity: .9; cursor: default; }
+
+.page { width: min(820px, 100% - 32px); margin: 28px auto 60px; }
+.page-title { font-size: 24px; margin-bottom: 6px; }
+.page-sub { color: var(--muted); margin-bottom: 20px; }
+
+/* ---- 前測頁 ---- */
+.pretest-box {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .06);
+}
+.form-frame { display: flex; justify-content: center; }
+.form-frame iframe { width: 100%; max-width: 640px; border: 0; }
+.next-area { text-align: center; margin-top: 20px; }
+.next-area .hint { color: var(--muted); margin-bottom: 10px; }
+.notice {
+    background: #fff4e5;
+    border: 1px solid #f5c37a;
+    color: #8a5300;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.primary-btn {
+    background: var(--brand);
+    color: #fff;
+    border: 0;
+    border-radius: 8px;
+    padding: 12px 32px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.primary-btn:hover { background: var(--brand-dark); }
+.primary-btn:disabled { background: #cfd5df; color: #7a8190; cursor: not-allowed; }
+
+/* ---- 評論列表（index） ---- */
+.feed { display: flex; flex-direction: column; gap: 14px; }
+.post-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    cursor: pointer;
+    transition: box-shadow .2s, transform .2s;
+    text-align: left;
+    width: 100%;
+    font: inherit;
+    color: inherit;
+}
+.post-card:hover { box-shadow: 0 6px 16px rgba(0, 0, 0, .08); transform: translateY(-1px); }
+.post-card .thumb {
+    flex: 0 0 64px;
+    height: 64px;
+    border-radius: 10px;
+    background: #e8eefb;
+    display: grid;
+    place-items: center;
+    font-size: 28px;
+}
+.post-card .body { flex: 1; min-width: 0; }
+.post-card .tag {
+    display: inline-block;
+    font-size: 12px;
+    color: var(--brand);
+    background: #e8eefb;
+    border-radius: 999px;
+    padding: 1px 10px;
+    margin-bottom: 4px;
+}
+.post-card h2 { font-size: 18px; margin-bottom: 4px; }
+.post-card .excerpt { color: var(--muted); font-size: 14px; }
+.post-card .meta { margin-top: 8px; font-size: 13px; color: var(--muted); }
+
+.toast {
+    position: fixed;
+    left: 50%;
+    bottom: 32px;
+    transform: translateX(-50%);
+    background: rgba(30, 30, 30, .9);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 15px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s;
+}
+.toast.show { opacity: 1; }
+
+/* ---- 評論頁（review） ---- */
+.topic-card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 22px 24px;
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .06);
+    margin-bottom: 24px;
+}
+.topic-card .thumb {
+    flex: 0 0 80px;
+    height: 80px;
+    border-radius: 12px;
+    background: #e8eefb;
+    display: grid;
+    place-items: center;
+    font-size: 38px;
+}
+.topic-card h1 { font-size: 22px; }
+.topic-card p { color: var(--muted); font-size: 14px; }
+
+.review-list { display: flex; flex-direction: column; gap: 16px; }
+.review-item {
+    background: var(--card);
+    border-radius: 12px;
+    border: 1px solid var(--line);
+    padding: 18px 20px;
+}
+.review-row { display: flex; gap: 16px; align-items: center; }
+.review-row .reviewer {
+    flex: 0 0 72px;
+    height: 72px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #eef1f6;
+}
+.review-row .reviewer img { width: 100%; height: 100%; object-fit: cover; }
+.review-row .content { flex: 1; min-width: 0; }
+.review-row .serial { color: var(--muted); font-size: 14px; }
+.review-row .rating { color: #d5d9e0; letter-spacing: 2px; font-size: 18px; }
+.review-row .rating .on { color: var(--star); }
+.review-row .text { margin-top: 4px; }
+
+.fill-survey-btn {
+    flex: 0 0 auto;
+    background: var(--brand);
+    color: #fff;
+    border: 0;
+    border-radius: 8px;
+    padding: 9px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.fill-survey-btn:hover { background: var(--brand-dark); }
+.fill-survey-btn:disabled { background: var(--ok); cursor: default; }
+
+.survey-frame { margin-top: 16px; display: flex; justify-content: center; }
+.survey-frame iframe { width: 100%; max-width: 640px; border: 0; }
+.hide { display: none !important; }
+
+@media (max-width: 600px) {
+    .review-row { flex-wrap: wrap; }
+    .review-row .reviewer { flex-basis: 56px; height: 56px; }
+    .fill-survey-btn { width: 100%; }
+}
+
+/* ---- 完成評論後的按鈕區（review） ---- */
+.finish-area { text-align: center; margin-top: 28px; }
+.finish-area .hint { color: var(--muted); margin-bottom: 10px; }
+
+/* ---- 後測完成畫面 ---- */
+.end-box { text-align: center; padding: 48px 24px; }
+.end-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 16px;
+    border-radius: 50%;
+    background: var(--ok);
+    color: #fff;
+    font-size: 34px;
+    line-height: 64px;
+}

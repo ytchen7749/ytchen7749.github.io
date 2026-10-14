@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>醫療評論網－最後問卷</title>
+    <link rel="stylesheet" href="./CSS/experiment.css">
+    <script src="./js/common.js"></script>
+    <script defer src="./js/posttest.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="logo">醫療評論網</div>
+    </header>
+
+    <main class="page">
+        <div id="survey-step">
+            <h1 class="page-title">最後一份問卷</h1>
+            <p class="page-sub">感謝你看完所有評論，請完成以下問卷。</p>
+
+            <section class="pretest-box">
+                <div id="config-notice" class="notice hide"></div>
+                <div class="form-frame">
+                    <iframe id="posttest-form" height="900">載入中…</iframe>
+                </div>
+            </section>
+        </div>
+
+        <section id="thanks-step" class="pretest-box end-box hide">
+            <div class="end-icon">✓</div>
+            <h1 class="page-title">實驗已完成</h1>
+            <p class="page-sub">非常感謝你的參與！你的回覆已經送出，現在可以關閉這個頁面。</p>
+        </section>
+    </main>
+</body>
+</html>

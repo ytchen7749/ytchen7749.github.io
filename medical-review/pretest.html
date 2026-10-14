@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>醫療評論網－前測問卷</title>
+    <link rel="stylesheet" href="./CSS/experiment.css">
+    <script src="./js/common.js"></script>
+    <script defer src="./js/pretest.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="logo">醫療評論網</div>
+    </header>
+
+    <main class="page">
+        <h1 class="page-title">開始之前</h1>
+        <p class="page-sub">請先完成以下問卷，送出後即可進入下一步。</p>
+
+        <section class="pretest-box">
+            <div id="config-notice" class="notice hide"></div>
+            <div class="form-frame">
+                <iframe id="pretest-form" height="900">載入中…</iframe>
+            </div>
+            <div class="next-area">
+                <p id="next-hint" class="hint">完成並送出問卷後，下方按鈕才會開放。</p>
+                <button id="next-btn" class="primary-btn" type="button" disabled>進入下一步</button>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
