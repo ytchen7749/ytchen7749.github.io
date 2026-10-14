@@ -44,6 +44,36 @@ function withGroupParam(url) {
     return url + (url.includes('?') ? '&' : '?') + 'g=' + g;
 }
 
+// 整理 Google 表單網址，容許幾種常見的貼法：
+//   1. 整段 <iframe src="..."> 嵌入碼 → 取出 src
+//   2. 少了 https:// → 自動補上（否則瀏覽器會把它當成本站檔案，出現 GitHub 404）
+//   3. 一般分享網址（.../viewform）→ 自動加上 embedded=true
+// 回傳 { url, error }；error 有值時代表網址無法使用。
+function normalizeFormUrl(raw) {
+    let url = String(raw || '').trim();
+    if (!url) return { url: '', error: '尚未填入表單網址' };
+ 
+    const srcMatch = url.match(/src\s*=\s*["']([^"']+)["']/i);
+    if (srcMatch) url = srcMatch[1];
+    url = url.replace(/&amp;/g, '&');
+ 
+    if (!/^https?:\/\//i.test(url)) url = 'https://' + url.replace(/^\/+/, '');
+ 
+    if (/forms\.gle\//i.test(url)) {
+        return { url: '', error: '這是 forms.gle 短網址，無法嵌入。請改用表單「傳送 → 嵌入 < >」裡 src 的完整網址。' };
+    }
+    if (!/docs\.google\.com\/forms\//i.test(url)) {
+        return { url: '', error: '這不是 Google 表單網址：' + url };
+    }
+    if (/\/edit(\?|#|$)/i.test(url)) {
+        return { url: '', error: '這是表單的編輯網址（/edit），受試者無法填寫。請改用「傳送 → 嵌入 < >」裡的網址。' };
+    }
+    if (!/[?&]embedded=true/i.test(url)) {
+        url += (url.includes('?') ? '&' : '?') + 'embedded=true';
+    }
+    return { url, error: '' };
+}
+
 // 偵測嵌入的 Google 表單是否已送出。
 // Google 表單每換一頁、或送出後顯示確認畫面時，iframe 都會觸發一次 load。
 // 因此第 (formPages + 1) 次 load 代表已送出。單頁表單 formPages = 1。

@@ -133,17 +133,17 @@ const reviewData = {
 };
 
 // ---------- 4. 各組的 Google 表單 ----------
-// formUrls[0] 是第 1 組，依此類推（沿用前一版的 9 個表單）
+// formUrls[0] 是第 1 組，依此類推
 const formUrls = [
-    '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc5o0SKEBqX_e_CVh5NZOedl0x5f5tEp2hTV8iZ4gJWgDqO1Q/viewform?embedded=true" width="640" height="1878" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>',
-    '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf1Bf9gnjCZ-e1VJSVfzJ82ftYdQSCNPPrfJ2vY-u8lqtfm1A/viewform?embedded=true" width="640" height="1878" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>',
-    '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfbT62JFhJRGuJ7viPaU5lY2UbWUDGoklYsCT0iTNA4qjFUkw/viewform?embedded=true" width="640" height="1878" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>',
-    '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSei-KKdNvHm_i-_L4H-XnWn5BVHeEHXno4XVlNmfu-UmXFEnw/viewform?embedded=true" width="640" height="1846" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>',
-    '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScQ0Du2ZK_2I8ZXMLfZVTrwrZ0P42a11oZbXzM0pT0gc__oYw/viewform?embedded=true" width="640" height="1846" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>',
-    '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeNuWd_H-ZjbLqAXCNGM3dIafgEO1XhQ5oWVrCUyjSuK_fZbg/viewform?embedded=true" width="640" height="1846" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>',
-    '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdmEfuKzPUHI1TWHB2sdPjucb6XhwKJoAIPR1hIfzwwmH-miw/viewform?embedded=true" width="640" height="1846" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>',
-    '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc35QaB-QByCaG5ol3zF08TYcUAdw-IzDVq-NX5X0Qq_3OaWA/viewform?embedded=true" width="640" height="1846" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>',
-    '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc1XGo5B_iXl_-Wlc--Lycaae5cfg229m3r6Q_A0wzrP1fiJA/viewform?embedded=true" width="640" height="1846" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>'
+    'https://docs.google.com/forms/d/e/1FAIpQLSc5o0SKEBqX_e_CVh5NZOedl0x5f5tEp2hTV8iZ4gJWgDqO1Q/viewform?embedded=true',   // G1
+    'https://docs.google.com/forms/d/e/1FAIpQLSf1Bf9gnjCZ-e1VJSVfzJ82ftYdQSCNPPrfJ2vY-u8lqtfm1A/viewform?embedded=true',   // G2
+    'https://docs.google.com/forms/d/e/1FAIpQLSfbT62JFhJRGuJ7viPaU5lY2UbWUDGoklYsCT0iTNA4qjFUkw/viewform?embedded=true',   // G3
+    'https://docs.google.com/forms/d/e/1FAIpQLSei-KKdNvHm_i-_L4H-XnWn5BVHeEHXno4XVlNmfu-UmXFEnw/viewform?embedded=true',   // G4
+    'https://docs.google.com/forms/d/e/1FAIpQLScQ0Du2ZK_2I8ZXMLfZVTrwrZ0P42a11oZbXzM0pT0gc__oYw/viewform?embedded=true',   // G5
+    'https://docs.google.com/forms/d/e/1FAIpQLSeNuWd_H-ZjbLqAXCNGM3dIafgEO1XhQ5oWVrCUyjSuK_fZbg/viewform?embedded=true',   // G6
+    'https://docs.google.com/forms/d/e/1FAIpQLSdmEfuKzPUHI1TWHB2sdPjucb6XhwKJoAIPR1hIfzwwmH-miw/viewform?embedded=true',   // G7
+    'https://docs.google.com/forms/d/e/1FAIpQLSc35QaB-QByCaG5ol3zF08TYcUAdw-IzDVq-NX5X0Qq_3OaWA/viewform?embedded=true',   // G8
+    'https://docs.google.com/forms/d/e/1FAIpQLSc1XGo5B_iXl_-Wlc--Lycaae5cfg229m3r6Q_A0wzrP1fiJA/viewform?embedded=true'   // G9
 ];
 
 // 每則評論後的表單有幾頁（單頁填 1），用來判斷是否已送出
@@ -156,12 +156,14 @@ const PREFILL_ENTRY_REVIEW_ID = '';   // 會填入如 G3-5
 const PREFILL_ENTRY_CONDITION = '';   // 會填入如 CN2
 
 function buildFormUrl(base, item) {
-    let url = base;
+    const checked = normalizeFormUrl(base);
+    if (checked.error) return checked;
+    let url = checked.url;
     const params = [];
     if (PREFILL_ENTRY_REVIEW_ID) params.push(PREFILL_ENTRY_REVIEW_ID + '=' + encodeURIComponent(item.id));
     if (PREFILL_ENTRY_CONDITION) params.push(PREFILL_ENTRY_CONDITION + '=' + encodeURIComponent(item.key));
     if (params.length) url += '&usp=pp_url&' + params.join('&');
-    return url;
+    return { url, error: '' };
 }
 
 function stars(n) {
