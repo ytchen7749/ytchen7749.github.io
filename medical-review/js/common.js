@@ -46,25 +46,28 @@ function withGroupParam(url) {
 
 // 整理 Google 表單網址，容許幾種常見的貼法：
 //   1. 整段 <iframe src="..."> 嵌入碼 → 取出 src
-//   2. 少了 https:// → 自動補上（否則瀏覽器會把它當成本站檔案，出現 GitHub 404）
+//   2. 開頭寫錯或缺少（https//、https:/、全形冒號、多了引號或空白、重複 https://）
+//      → 直接從字串中取出 docs.google.com/forms/... 這段，重新組成 https:// 網址
 //   3. 一般分享網址（.../viewform）→ 自動加上 embedded=true
 // 回傳 { url, error }；error 有值時代表網址無法使用。
 function normalizeFormUrl(raw) {
-    let url = String(raw || '').trim();
-    if (!url) return { url: '', error: '尚未填入表單網址' };
- 
-    const srcMatch = url.match(/src\s*=\s*["']([^"']+)["']/i);
-    if (srcMatch) url = srcMatch[1];
-    url = url.replace(/&amp;/g, '&');
- 
-    if (!/^https?:\/\//i.test(url)) url = 'https://' + url.replace(/^\/+/, '');
- 
-    if (/forms\.gle\//i.test(url)) {
+    let text = String(raw || '').trim();
+    if (!text) return { url: '', error: '尚未填入表單網址' };
+
+    const srcMatch = text.match(/src\s*=\s*["'‘’“”]([^"'‘’“”]+)/i);
+    if (srcMatch) text = srcMatch[1];
+    text = text.replace(/&amp;/g, '&');
+
+    if (/forms\.gle\//i.test(text)) {
         return { url: '', error: '這是 forms.gle 短網址，無法嵌入。請改用表單「傳送 → 嵌入 < >」裡 src 的完整網址。' };
     }
-    if (!/docs\.google\.com\/forms\//i.test(url)) {
-        return { url: '', error: '這不是 Google 表單網址：' + url };
+
+    // 只取 docs.google.com/forms/ 開始、到空白或引號為止的那一段
+    const core = text.match(/docs\.google\.com\/forms\/[^\s"'<>‘’“”]+/i);
+    if (!core) {
+        return { url: '', error: '找不到 Google 表單網址（應包含 docs.google.com/forms/）。目前的內容是：' + text };
     }
+    let url = 'https://' + core[0];
     if (/\/edit(\?|#|$)/i.test(url)) {
         return { url: '', error: '這是表單的編輯網址（/edit），受試者無法填寫。請改用「傳送 → 嵌入 < >」裡的網址。' };
     }

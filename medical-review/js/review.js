@@ -132,19 +132,20 @@ const reviewData = {
     ]
 };
 
-// ---------- 4. 各組的 Google 表單 ----------
-// formUrls[0] 是第 1 組，依此類推（沿用前一版的 9 個表單）
-const formUrls = [
-    'https://docs.google.com/forms/d/e/1FAIpQLSc5o0SKEBqX_e_CVh5NZOedl0x5f5tEp2hTV8iZ4gJWgDqO1Q/viewform?embedded=true',   // G1
-    'https://docs.google.com/forms/d/e/1FAIpQLSf1Bf9gnjCZ-e1VJSVfzJ82ftYdQSCNPPrfJ2vY-u8lqtfm1A/viewform?embedded=true',   // G2
-    'https://docs.google.com/forms/d/e/1FAIpQLSfbT62JFhJRGuJ7viPaU5lY2UbWUDGoklYsCT0iTNA4qjFUkw/viewform?embedded=true',   // G3
-    'https://docs.google.com/forms/d/e/1FAIpQLSei-KKdNvHm_i-_L4H-XnWn5BVHeEHXno4XVlNmfu-UmXFEnw/viewform?embedded=true',   // G4
-    'https://docs.google.com/forms/d/e/1FAIpQLScQ0Du2ZK_2I8ZXMLfZVTrwrZ0P42a11oZbXzM0pT0gc__oYw/viewform?embedded=true',   // G5
-    'https://docs.google.com/forms/d/e/1FAIpQLSeNuWd_H-ZjbLqAXCNGM3dIafgEO1XhQ5oWVrCUyjSuK_fZbg/viewform?embedded=true',   // G6
-    'https://docs.google.com/forms/d/e/1FAIpQLSdmEfuKzPUHI1TWHB2sdPjucb6XhwKJoAIPR1hIfzwwmH-miw/viewform?embedded=true',   // G7
-    'https://docs.google.com/forms/d/e/1FAIpQLSc35QaB-QByCaG5ol3zF08TYcUAdw-IzDVq-NX5X0Qq_3OaWA/viewform?embedded=true',   // G8
-    'https://docs.google.com/forms/d/e/1FAIpQLSc1XGo5B_iXl_-Wlc--Lycaae5cfg229m3r6Q_A0wzrP1fiJA/viewform?embedded=true'   // G9
-];
+// ---------- 4. 每則評論對應的 Google 表單（ID1~ID9） ----------
+// 表單跟著「評論內容」走：不論該則評論在哪一組、排第幾個，都顯示同一份表單。
+// 代碼對應上面 commentInfo 的 CP1~UN3：ID1=CP1、ID2=CP2 … ID9=UN3（即第 1 組的順序）。
+const formUrls = {
+    CP1: 'https://docs.google.com/forms/d/e/1FAIpQLSc5o0SKEBqX_e_CVh5NZOedl0x5f5tEp2hTV8iZ4gJWgDqO1Q/viewform?embedded=true',
+    CP2: 'https://docs.google.com/forms/d/e/1FAIpQLSf1Bf9gnjCZ-e1VJSVfzJ82ftYdQSCNPPrfJ2vY-u8lqtfm1A/viewform?embedded=true',
+    CP3: 'https://docs.google.com/forms/d/e/1FAIpQLSfbT62JFhJRGuJ7viPaU5lY2UbWUDGoklYsCT0iTNA4qjFUkw/viewform?embedded=true',
+    CN1: 'https://docs.google.com/forms/d/e/1FAIpQLSei-KKdNvHm_i-_L4H-XnWn5BVHeEHXno4XVlNmfu-UmXFEnw/viewform?embedded=true',
+    CN2: 'https://docs.google.com/forms/d/e/1FAIpQLScQ0Du2ZK_2I8ZXMLfZVTrwrZ0P42a11oZbXzM0pT0gc__oYw/viewform?embedded=true',
+    CN3: 'https://docs.google.com/forms/d/e/1FAIpQLSeNuWd_H-ZjbLqAXCNGM3dIafgEO1XhQ5oWVrCUyjSuK_fZbg/viewform?embedded=true',
+    UN1: 'https://docs.google.com/forms/d/e/1FAIpQLSdmEfuKzPUHI1TWHB2sdPjucb6XhwKJoAIPR1hIfzwwmH-miw/viewform?embedded=true',
+    UN2: 'https://docs.google.com/forms/d/e/1FAIpQLSc35QaB-QByCaG5ol3zF08TYcUAdw-IzDVq-NX5X0Qq_3OaWA/viewform?embedded=true',
+    UN3: 'https://docs.google.com/forms/d/e/1FAIpQLSc1XGo5B_iXl_-Wlc--Lycaae5cfg229m3r6Q_A0wzrP1fiJA/viewform?embedded=true'
+};
 
 // 每則評論後的表單有幾頁（單頁填 1），用來判斷是否已送出
 const REVIEW_FORM_PAGES = 1;
@@ -233,9 +234,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const iframe = box.querySelector('iframe');
             box.classList.remove('hide');
             if (!iframe.src) {
-                const form = buildFormUrl(formUrls[group - 1], items[i]);
+                const form = buildFormUrl(formUrls[items[i].key], items[i]);
                 if (form.error) {
-                    box.innerHTML = `<p class="notice">第 ${group} 組的表單網址有問題：${form.error}</p>`;
+                    box.innerHTML = `<p class="notice">${items[i].key} 的表單網址有問題：${form.error}</p>`;
                     return;
                 }
                 watchFormSubmit(iframe, REVIEW_FORM_PAGES, () => {
