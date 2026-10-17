@@ -201,6 +201,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="serial">#${i + 1}</div>
                     <p class="text">${c.content}</p>
                 </div>
+            </div>
+            <div class="survey-action">
                 <button type="button" class="fill-survey-btn" data-i="${i}">填寫問卷</button>
             </div>
             <div class="survey-frame hide" id="survey-${i}">

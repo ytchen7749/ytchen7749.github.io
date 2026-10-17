@@ -160,7 +160,7 @@ body {
     border: 1px solid var(--line);
     padding: 18px 20px;
 }
-.review-row { display: flex; gap: 16px; align-items: center; }
+.review-row { display: flex; gap: 16px; align-items: flex-start; }
 .review-row .reviewer {
     flex: 0 0 72px;
     height: 72px;
@@ -175,14 +175,21 @@ body {
 .review-row .rating .on { color: var(--star); }
 .review-row .text { margin-top: 4px; }
 
+/* 問卷按鈕放在評論正下方，橫跨整張卡片 */
+.survey-action {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px dashed var(--line);
+}
 .fill-survey-btn {
-    flex: 0 0 auto;
+    display: block;
+    width: 100%;
     background: var(--brand);
     color: #fff;
     border: 0;
     border-radius: 8px;
-    padding: 9px 16px;
-    font-size: 14px;
+    padding: 11px 16px;
+    font-size: 15px;
     font-weight: 600;
     cursor: pointer;
 }
@@ -194,9 +201,7 @@ body {
 .hide { display: none !important; }
 
 @media (max-width: 600px) {
-    .review-row { flex-wrap: wrap; }
     .review-row .reviewer { flex-basis: 56px; height: 56px; }
-    .fill-survey-btn { width: 100%; }
 }
 
 /* ---- 完成評論後的按鈕區（review） ---- */
