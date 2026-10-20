@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>研究者管理－受試者連結</title>
+    <link rel="stylesheet" href="./CSS/experiment.css">
+    <link rel="stylesheet" href="./CSS/admin.css">
+    <script defer src="./js/admin.js"></script>
+</head>
+<body>
+    <header class="site-header admin-header">
+        <div class="logo">研究者管理｜受試者連結</div>
+    </header>
+
+    <main class="page admin-page">
+        <section class="admin-card">
+            <h2>產生連結</h2>
+            <div class="admin-grid">
+                <label>實驗入口網址
+                    <input id="base-url" type="url" spellcheck="false">
+                    <small>受試者從這裡開始（前測頁）。預設是這個網站的 pretest.html。</small>
+                </label>
+                <label>新增人數
+                    <input id="count" type="number" min="1" max="900" value="18">
+                    <small>建議用 9 的倍數，各組人數才會一樣。</small>
+                </label>
+                <label>編號前綴
+                    <input id="prefix" type="text" value="P" maxlength="10" spellcheck="false">
+                </label>
+                <label>編號位數
+                    <input id="digits" type="number" min="1" max="6" value="3">
+                    <small>3 位 → P001、P002…</small>
+                </label>
+                <label class="wide">分組方式
+                    <select id="method">
+                        <option value="block">區塊隨機（建議）：每 9 人為一個區塊，9 組各一人、順序隨機</option>
+                        <option value="cycle">依序輪流：第 1 人 G1、第 2 人 G2 … 第 10 人回到 G1</option>
+                    </select>
+                </label>
+            </div>
+            <div class="admin-actions">
+                <button id="generate-btn" class="primary-btn" type="button">新增到名單</button>
+                <span id="generate-msg" class="muted"></span>
+            </div>
+        </section>
+
+        <section class="admin-card">
+            <div class="list-head">
+                <h2>受試者名單</h2>
+                <div class="list-tools">
+                    <input id="search" type="search" placeholder="搜尋編號或備註">
+                    <select id="filter">
+                        <option value="all">全部</option>
+                        <option value="unsent">未發送</option>
+                        <option value="sent">已發送</option>
+                    </select>
+                    <button id="export-btn" class="ghost-btn" type="button">匯出 CSV</button>
+                    <label class="ghost-btn file-btn">匯入 CSV
+                        <input id="import-file" type="file" accept=".csv,text/csv">
+                    </label>
+                    <button id="clear-btn" class="ghost-btn danger" type="button">清空名單</button>
+                </div>
+            </div>
+
+            <div id="summary" class="summary"></div>
+
+            <div class="table-wrap">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>已發送</th>
+                            <th>編號</th>
+                            <th>組別</th>
+                            <th>連結</th>
+                            <th>備註（發給誰）</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rows"></tbody>
+                </table>
+                <p id="empty" class="empty">名單是空的。在上方設定人數後按「新增到名單」。</p>
+            </div>
+
+            <p class="storage-note">
+                名單只存在<strong>這台電腦的這個瀏覽器</strong>裡。換電腦、換瀏覽器或清除瀏覽資料就會看不到，
+                請記得定期按「匯出 CSV」備份；在另一台電腦用「匯入 CSV」就能接著用。
+            </p>
+        </section>
+    </main>
+
+    <div id="toast" class="toast"></div>
+</body>
+</html>

@@ -159,6 +159,7 @@ body {
     border-radius: 12px;
     border: 1px solid var(--line);
     padding: 18px 20px;
+    scroll-margin-top: 76px;   /* 捲動定位時留出頂端固定頁首的高度 */
 }
 .review-row { display: flex; gap: 16px; align-items: flex-start; }
 .review-row .reviewer {
@@ -168,7 +169,34 @@ body {
     overflow: hidden;
     background: #eef1f6;
 }
-.review-row .reviewer img { width: 100%; height: 100%; object-fit: cover; }
+.review-row .reviewer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* 個別頭像可用下面三個變數微調：放大倍率、左右位移、上下位移 */
+    transform: translate(var(--avatar-x, 0%), var(--avatar-y, 0%)) scale(var(--avatar-scale, 1));
+    transform-origin: center;
+}
+
+/* ===== 個別頭像微調 =====
+   --avatar-scale：放大倍率，1 = 原尺寸，1.6 = 放大 1.6 倍
+   --avatar-x / --avatar-y：位移，正數往右／往下，負數往左／往上（例如 -3%）
+   A.png 的圓形只佔圖片寬度約 60%，四周是透明留白，所以要放大才會和照片頭像一樣大。
+   1.6 會讓藍色外框剛好在頭像框內；1.7 外框會貼齊邊緣；再大外框就會被裁掉。 */
+.review-row .reviewer img[src$="/A.png"] {
+    --avatar-scale: 1.6;
+    --avatar-x: 0%;
+    --avatar-y: 0%;
+}
+/* C2.png 的照片只佔圖片約 80%、略偏上，放大並往下移一點蓋掉灰色底 */
+.review-row .reviewer img[src$="/C2.png"] {
+    --avatar-scale: 1.28;
+    --avatar-x: 0%;
+    --avatar-y: 2%;
+}
+/* 其他頭像需要調整時，照同樣格式新增，例如：
+.review-row .reviewer img[src$="/B3.png"] { --avatar-scale: 1.05; --avatar-y: -3%; }
+*/
 .review-row .content { flex: 1; min-width: 0; }
 .review-row .serial { color: var(--muted); font-size: 14px; }
 .review-row .rating { color: #d5d9e0; letter-spacing: 2px; font-size: 18px; }

@@ -1,7 +1,6 @@
 // ===== 評論頁 =====
-// 進入此頁時決定組別（1~9）：
-//   網址有 ?g=3 → 用第 3 組（研究者指定）
-//   沒有 → 隨機分派，並記在本次瀏覽中（重新整理不會換組）
+// 組別與受試者編號在前測頁決定（依點擊順序、研究者專屬連結，或連不到計數器時隨機），
+// 本頁沿用同一次瀏覽中記住的結果；若受試者直接打開本頁，會隨機分組。
 
 // ---------- 1. 主題卡片（頁面最上方） ----------
 const topicInfo = {
@@ -150,29 +149,21 @@ const formUrls = {
 // 每則評論後的表單有幾頁（單頁填 1），用來判斷是否已送出
 const REVIEW_FORM_PAGES = 1;
 
-// （選用）自動在表單中預填「評論編號」與「條件代碼」，讓每筆回應能對應到是哪一則評論。
-// 做法：在 Google 表單加兩個簡答題，用「取得預先填入的連結」找到它們的 entry 編號，
-// 例如 'entry.123456789'，填在下面。留空則不預填。
-const PREFILL_ENTRY_REVIEW_ID = '';   // 會填入如 G3-5
-const PREFILL_ENTRY_CONDITION = '';   // 會填入如 CN2
-
-function buildFormUrl(base, item) {
+// 預填受試者編號、組別、位置的設定在 js/common.js 的 PREFILL（依評論代碼 CP1~UN3 分別設定）
+function buildFormUrl(base, item, group, pid) {
     const checked = normalizeFormUrl(base);
     if (checked.error) return checked;
-    let url = checked.url;
-    const params = [];
-    if (PREFILL_ENTRY_REVIEW_ID) params.push(PREFILL_ENTRY_REVIEW_ID + '=' + encodeURIComponent(item.id));
-    if (PREFILL_ENTRY_CONDITION) params.push(PREFILL_ENTRY_CONDITION + '=' + encodeURIComponent(item.key));
-    if (params.length) url += '&usp=pp_url&' + params.join('&');
+    const url = addPrefill(checked.url, item.key, { pid, group: 'G' + group, position: item.id });
     return { url, error: '' };
 }
-
 
 document.addEventListener('DOMContentLoaded', () => {
     const group = resolveGroup();
     const groupKey = 'G' + group;
+    const pid = resolvePid();
     document.body.dataset.group = groupKey;   // 方便除錯時在開發者工具查看
-    console.log('分派組別：', groupKey);
+    document.body.dataset.pid = pid;
+    console.log('受試者：', pid, '分派組別：', groupKey);
 
     // 主題卡片
     document.getElementById('topic').innerHTML = `
@@ -218,6 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateProgress() {
         if (completed >= items.length) {
             progressText.textContent = '所有問卷都已完成，請點擊下方按鈕繼續。';
+            if (finishBtn.disabled && completed > 0) logStage('review');
             finishBtn.disabled = false;
         } else {
             progressText.textContent = `已完成 ${completed} / ${items.length} 則評論的問卷，全部完成後才能繼續。`;
@@ -236,7 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const iframe = box.querySelector('iframe');
             box.classList.remove('hide');
             if (!iframe.src) {
-                const form = buildFormUrl(formUrls[items[i].key], items[i]);
+                const form = buildFormUrl(formUrls[items[i].key], items[i], group, pid);
                 if (form.error) {
                     box.innerHTML = `<p class="notice">${items[i].key} 的表單網址有問題：${form.error}</p>`;
                     return;
@@ -247,6 +239,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     btn.disabled = true;
                     completed++;
                     updateProgress();
+                    // 表單收起後，把畫面捲回剛填完的那則評論頂端
+                    requestAnimationFrame(() => {
+                        btn.closest('.review-item').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    });
                 });
                 iframe.src = form.url;
             }
